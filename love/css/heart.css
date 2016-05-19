@@ -1,9 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @import url(http://fonts.googleapis.com/css?family=Hammersmith+One);
 
-body {
-  background-color: #ccc;
-}
 .container {
   width: 512px;
   height: 512px;
@@ -71,7 +68,7 @@ body {
 
 
 #bottom span {
-  height: 350px;
+  height: 380px;
   line-height: 700px;
   position: absolute;
   width: 0px;
@@ -174,4 +171,35 @@ body {
   100% {
     top: 110px;
   }
+}
+@media screen and (max-width: 600px) {
+.container {
+  width: 480px;
+  height: 480px;
+  margin: auto;
+  }
+.hometown {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  width: 480px;
+  height: 480px;
+}
+.city {
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+  padding-top: 80px;
+  font-size: 2.6em;
+  margin-top: -110px;
+}
+.hometown {
+  font-size: 1.8em;
+  width: 480px;
+  height: 480px;
+}
+#bottom span {
+  top: 0px;
+}
 }
