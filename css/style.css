@@ -1319,7 +1319,7 @@ color
   box-shadow: 3px 2px 8px rgba(0,0,0,0.07);
 }
 .article-header {
-  border-left: 6px solid #eee;
+  border-left: 6px solid #f60;
   padding: 15px 8.2em 15px 25px;
 }
 .article-header:hover {
