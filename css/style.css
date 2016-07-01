@@ -1619,9 +1619,6 @@ color
 #intro::after {
   content: none;
 }
-li:hover {
-  background: rgba(158,188,226,0.21);
-}
 .article-entry > ol:last-child > li:nth-child(2n) {
   background: rgba(158,188,226,0.12);
 }
