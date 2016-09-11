@@ -786,6 +786,12 @@ a {
   -moz-background-size: 90%;
   background-size: 90%;
 }
+#header .header-nav .social .优酷 {
+  background: url("/img/优酷.png") center no-repeat #c6c6c6;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  background-size: 100%;
+}
 #header .header-nav .social .豆瓣 {
   background: url("/img/豆瓣.png") center no-repeat #06c611;
   -webkit-background-size: 88%;
