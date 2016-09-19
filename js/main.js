@@ -143,12 +143,12 @@ require([], function (){
     $(".archive-article-title, .github-widget a").attr("target", "_blank");
 
     //随机颜色
-    var colorList = ["#6da336", "#ff945c", "#66CC66", "#99CC99", "#CC6666", "#76becc", "#c99979", "#918597", "#4d4d4d"];
-    var id = Math.ceil(Math.random()*(colorList.length-1));
+    //var colorList = ["#6da336", "#ff945c", "#66CC66", "#99CC99", "#CC6666", "#76becc", "#c99979", "#918597", "#4d4d4d"];
+    //var id = Math.ceil(Math.random()*(colorList.length-1));
     //PC
-    $("#container .left-col .overlay").css({"background-color": colorList[id],"opacity": .3});
+    //$("#container .left-col .overlay").css({"background-color": colorList[id],"opacity": .3});
     //移动端
-    $("#container #mobile-nav .overlay").css({"background-color": colorList[id],"opacity": .7});
+    //$("#container #mobile-nav .overlay").css({"background-color": colorList[id],"opacity": .7});
 
     $("table").wrap("<div class='table-area'></div>");
 

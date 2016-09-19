@@ -231,7 +231,7 @@ a {
   margin: 3px;
 }
 #container .left-col {
-  background: rgba(255,255,255,0.85);
+  background: #fff;
   width: 300px;
   position: fixed;
   opacity: 1;
@@ -262,7 +262,7 @@ a {
   position: absolute;
   right: 0;
   min-height: 100%;
-  background: rgba(255,255,255,0.8);
+  background: #eaeaea;
   left: 300px;
   width: auto;
 }
@@ -560,6 +560,7 @@ a {
 }
 #header a {
   color: #696969;
+  font-weight: bold;
 }
 #header a:hover {
   color: #b0a0aa;
@@ -1227,7 +1228,8 @@ color
   margin: 30px;
   margin-bottom: 5px;
   position: relative;
-  background: rgba(255,255,255,0.45);
+  background: #fff;
+  border: 1px solid #ddd;
   -webkit-transition: all 0.2s ease-in;
 }
 .article.show {
@@ -1316,8 +1318,6 @@ color
   margin-bottom: 0px;
   padding-bottom: 0.5em;
   word-break: break-word;
-  -webkit-box-shadow: 3px 2px 8px rgba(0,0,0,0.07);
-  box-shadow: 3px 2px 8px rgba(0,0,0,0.07);
 }
 .article-header {
   border-left: 6px solid #f60;
@@ -2904,4 +2904,40 @@ pre .javascript .function {
   .youyan {
     padding: 20px 10px;
   }
+}
+body {
+  background: #d3d3d3;
+}
+#container .left-col {
+  background: #fff;
+}
+.article {
+  background: #fff;
+}
+.article .article-inner {
+  margin-bottom: 1em;
+}
+.article .article-more-link a {
+  opacity: 0.9;
+}
+.tagcloud a {
+  opacity: 0.9;
+}
+#header .header-nav .social li {
+  opacity: 0.8;
+}
+.archives-wrap {
+  background: #fff;
+}
+.post-nav-button {
+  background: #ececec;
+}
+#post-nav-button a {
+  background: rgba(215,216,215,0.5);
+}
+.post-list {
+  background: #fff;
+}
+#article-nav {
+  background: rgba(158,188,226,0.9);
 }
