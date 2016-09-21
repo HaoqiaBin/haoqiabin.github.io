@@ -720,7 +720,6 @@ a {
 }
 #header .switch-part2 {
   left: 100%;
-  top: 20px;
   overflow-y: auto;
   max-height: 260px;
   font-size: 0.75rem;
@@ -2833,6 +2832,12 @@ pre .javascript .function {
   overflow: hidden;
 }
 #viewer-box {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
   width: 100%;
   height: 100%;
   position: relative;
@@ -2843,8 +2848,14 @@ pre .javascript .function {
 #viewer-box .viewer-box-l {
   background: rgba(20,20,20,0.9);
   width: 80%;
-  height: 100%;
-  float: left;
+  height: auto;
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -ms-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex-grow: 0;
+  flex-grow: 0;
+  min-width: 8em;
   max-width: 23em;
 }
 #viewer-box .viewer-box-l .viewer-box-wrap {
@@ -2877,10 +2888,18 @@ pre .javascript .function {
   line-height: 20px;
 }
 #viewer-box .viewer-box-r {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  width: auto;
+  height: auto;
   background: rgba(0,0,0,0);
-  width: 20%;
-  height: 100%;
-  float: right;
+}
+#viewer-box .viewer-box-r:hover {
+  cursor: w-resize;
 }
 #viewer-box.anm-swipe {
   -webkit-transform: translate3d(0, 0, 0);

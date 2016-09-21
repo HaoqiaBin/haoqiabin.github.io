@@ -27,9 +27,6 @@ define([], function(){
               '-ms-transform: translate(-' + idx * 100 + '%, 0);',
               'transform: translate(-' + idx * 100 + '%, 0);'
           ];
-        //$wrap.css({
-        //    "transform": "translate(-"+idx*100+"%, 0 )"
-        //});
         $wrap[0].style.cssText = transform.join('');
         $(".icon-wrap").addClass("hide");
         $(".icon-wrap").eq(idx).removeClass("hide");
@@ -118,51 +115,60 @@ define([], function(){
         }
     }
 
-    var tooltip = function(){
-        $(function() {
-            // if _config.yml => jquery_ui: false
-            if (!$().tooltip) return;
-            if (navigator.userAgent.match(/(iPhone|iPad|Android|ios|PlayBook|Touch)/i)) return;
-            $("[title]").tooltip({
-                show: {
-                    effect: 'blind',
-                    delay: 250,
-                    duration: 55,
+        if (yiliaConfig.jquery_ui[0]) {
+        var tooltip = function(){
+            require([yiliaConfig.jquery_ui[1]], function(){
+                var loadCSS = function (url, num) {
+                    var link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.href = url;
+                    var head = document.querySelector("head");
+                    head.insertBefore(link, head.childNodes[num]);
                 }
+                loadCSS(yiliaConfig.jquery_ui[2], 25);
+                if (!$().tooltip) return;
+                if (navigator.userAgent.match(/(iPhone|iPad|Android|ios|PlayBook|Touch)/i)) return;
+                $("[title]").tooltip({
+                    show: {
+                        effect: 'blind',
+                        delay: 250,
+                        duration: 55,
+                    }
+                })
+                $("#scroll").tooltip({
+                    show: {
+                        effect: 'clip',
+                        delay: 600,
+                        duration: 50,
+                    }
+                })
+                $("#tocButton, #comments").tooltip({
+                    show: {
+                        delay: 1200,
+                    }
+                })
+                $(".ds-replybox form").off("tooltip")
+                $("#post-nav-button").tooltip({
+                    show: {
+                        effect: 'clip',
+                        delay: 280,
+                        duration: 65,
+                    }
+                })
+                $("#post-nav-button > a:nth-child(2)").tooltip({
+                    show: {
+                        delay: 1500,
+                    }
+                })
+                $(".social").tooltip({
+                    show: {
+                        effect: 'scale',
+                        delay: 350,
+                        duration: 70,
+                    }
+                })
             })
-            $("#scroll").tooltip({
-                show: {
-                    effect: 'clip',
-                    delay: 600,
-                    duration: 50,
-                }
-            })
-            $("#tocButton, #comments").tooltip({
-                show: {
-                    delay: 1200,
-                }
-            })
-            $(".ds-replybox form").off("tooltip")
-            $("#post-nav-button").tooltip({
-                show: {
-                    effect: 'clip',
-                    delay: 280,
-                    duration: 65,
-                }
-            })
-            $("#post-nav-button > a:nth-child(2)").tooltip({
-                show: {
-                    delay: 1500,
-                }
-            })
-            $(".social").tooltip({
-                show: {
-                    effect: 'scale',
-                    delay: 350,
-                    duration: 70,
-                }
-            })
-        });
+        }()
     }
 
     return {
