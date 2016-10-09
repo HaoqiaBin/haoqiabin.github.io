@@ -671,7 +671,6 @@ a {
   max-height: 8.75rem;
   overflow: auto;
   text-align: center;
-  display: -webkit-box;
   -webkit-box-orient: horizontal;
   -webkit-box-pack: center;
   -webkit-box-align: center;
