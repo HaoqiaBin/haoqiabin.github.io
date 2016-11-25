@@ -284,24 +284,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>前段时间在创客群里看到一个用点阵LED屏做的超级萌萌哒的<a href="https://learn.adafruit.com/3d-printed-led-animation-bmo" target="_blank" rel="external">小玩偶</a>，有声音LED屏就会有动画，非常有趣，恰好我有一个点阵LED，于是决定自己也做一个，在instructables上找了下发现真的有这个东西<br>叫<a href="http://www.instructables.com/id/Lip-Synching-Robot" target="_blank" rel="external">Lip Syncing Robot</a>原版是直接把点阵屏焊上去Arduino pro mini的，我买的那个是用MAX7219驱动，看了一下作者的程序试着改成芯片驱动的，改到一半不会了[x_x]，问了一下作者用MAX7219的程序怎么写，第二天作者回复我了，现在任何一款Arduino都可以做了，还留了许多引脚方便以后添加新功能，不多说了，先看下面的图片和视频吧~~~<br><img src="/img/matrix_robot/front.jpg" alt="正面"><br>正面卖萌<br><img src="/img/matrix_robot/robot_logo.jpg" alt="Logo"><br>侧面Logo<br><img src="/img/matrix_robot/back.jpg" alt="背面"><br>背面开关</p>
-<p><strong>效果视频：</strong></p>
-<p><iframe height="500" width="720" src="http://player.youku.com/embed/XMTc1ODMzNjc2NA==" frameborder="0" 'allowfullscreen'=""></iframe></p>
-<p><iframe height="500" width="720" src="http://player.youku.com/embed/XMTgxMDkwMTQ5Mg==" frameborder="0" 'allowfullscreen'=""></iframe><br>有音乐或声音，点阵LED屏的表情就会动，声音越大嘴巴张得越大，没有声音就不开口了卖萌了，哈哈哈<br>搭配一台MP3小音响在旁边播放的话食用效果更佳[偷笑]，不过后来发现用纽扣电池供电不稳定，大家最好改用小的锂电供电<br>看完是不是感觉有点萌，想做一只玩，或者想做来送女孩子，女朋友呢，下面就放出怎么做的和一些程序建模文件。</p>
-<p><strong>零件：</strong></p>
-<ul>
-<li>8X8点阵LED(MAX7219)(32mm x 32mm)</li>
-<li>Arduino pro mini(其它的Arduino板子也可以)</li>
-<li>声音传感器</li>
-<li>开关按钮</li>
-<li>纽扣电池(最好改用小锂电)</li>
-<li>杜邦线(导线)</li>
-<li>外壳(需3D打印)</li>
-</ul>
-<p><img src="/img/matrix_robot/material.jpg" alt="材料"><br><img src="/img/matrix_robot/hand.png" alt="手"><br>后来又加了两只手上去，感觉更萌。外壳文件已经是加了手的版本<br><a href="/img/matrix_robot/卖萌表情包.rar">外壳文件</a>外壳是Solidwork2016建模的，听说SW文件低版本打不开<br>自己到某宝上选购零件吧，Arduino pro mini需要买一个USB转TTL的模块做程序下载器，第一次玩的要买一个<br>外壳文件自己找3D打印机打印出来</p>
-<p><strong>接线图：</strong><img src="/img/matrix_robot/jiexiantu.png" alt="接线图"><br>电路按照上图接就ok了，当然你也可以修改程序里的引脚，按自己想的去接。声音传感器把原来的排针去掉，不然装不进外壳<br>    DIN—-D2<br>     CS —-D3<br>      SLK—-D4<br>      OUT—-A4<br><a href="/img/matrix_robot/程序文件.rar">程序文件</a>里面有两个程序，分别是表情包程序和假唱机器人程序。<br>下载解压后，用Arduino IDE打开程序烧录进去pro mini就可以去卖萌了。<br><a href="http://xantorohara.github.io/led-matrix-editor/" target="_blank" rel="external">LED-Matrix-Editor</a>这是个在线编辑点阵LED图案的工具，可以自己改成自己喜欢的图案，然后复制代码到表情包程序里修改表情。</p>
-<p>一起做来玩吧。</p>
-
+              <p>前段时间在创客群里看到一个用点阵LED屏做的超级萌萌哒的<a href="https://learn.adafruit.com/3d-printed-led-animation-bmo">小玩偶</a>，有声音LED屏就会有动画，非常有趣，恰好我有一个点阵LED，于是决定自己也做一个，在instructables上找了下发现真的有这个东西<br>叫<a href="http://www.instructables.com/id/Lip-Synching-Robot">Lip Syncing Robot</a>原版是直接把点阵屏焊上去Arduino pro mini的，我买的那个是用MAX7219驱动，看了一下作者的程序试着改成芯片驱动的，改到一半不会了[x_x]，问了一下作者用MAX7219的程序怎么写，第二天作者回复我了，现在任何一款Arduino都可以做了，还留了许多引脚方便以后添加新功能，不多说了，先看下面的图片和视频吧~~~<br><img src="/img/matrix_robot/front.jpg" alt="正面"><br>正面卖萌<br>
+          
       
     </div>
     
@@ -314,6 +298,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器人/">机器人</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/11/25/led-robot/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
