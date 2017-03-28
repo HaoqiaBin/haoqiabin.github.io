@@ -185,9 +185,9 @@
                 <section class="switch-part switch-part3">
                     <div id="js-friends">
                     
-                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
-                    
                       <a target="_blank" class="main-nav-link switch-friends-link" href="http://SexyCyborg.imgur.com">SexyCyborg</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jingwen-zhu.com">朱静文</a>
                     
                       <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.yoyojacky.com">骑驴玩儿漂移</a>
                     
@@ -199,7 +199,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">一只爱搞机的单身汪！</div>
+                    <div id="js-aboutme">喜欢折腾，爱动手制作的男孩子！</div>
                 </section>
                 
             </div>
@@ -257,6 +257,68 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-usefulcode" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/27/usefulcode/" class="article-date">
+      <time datetime="2017-03-27T13:46:59.479Z" itemprop="datePublished">2017-03-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/27/usefulcode/">Arduino一些有用的代码</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>玩了差不多一年的Arduino，其中有些坑，收集了一些有用的辅助代码。</p>
+<p>查找i2c设备地址代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Wire.h&gt;</span>  </span></span><br><span class="line">   </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span>&#123;  </span><br><span class="line">  Wire.begin();  </span><br><span class="line">  Serial.begin(<span class="number">9600</span>);  </span><br><span class="line">  Serial.println(<span class="string">"\nI2C Scanner"</span>);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span>&#123;  </span><br><span class="line">  byte error, address;  </span><br><span class="line">  <span class="keyword">int</span> nDevices;  </span><br><span class="line">  Serial.println(<span class="string">"Scanning..."</span>);  </span><br><span class="line">  nDevices = <span class="number">0</span>;  </span><br><span class="line">  <span class="keyword">for</span> (address = <span class="number">1</span>; address &lt; <span class="number">127</span>; address++ )&#123;  </span><br><span class="line">    <span class="comment">// The i2c_scanner uses the return value of  </span></span><br><span class="line">    <span class="comment">// the Write.endTransmisstion to see if  </span></span><br><span class="line">    <span class="comment">// a device did acknowledge to the address.  </span></span><br><span class="line">    Wire.beginTransmission(address);  </span><br><span class="line">    error = Wire.endTransmission();  </span><br><span class="line">    <span class="keyword">if</span> (error == <span class="number">0</span>)&#123;  </span><br><span class="line">      Serial.print(<span class="string">"I2C device found at address 0x"</span>);  </span><br><span class="line">      <span class="keyword">if</span> (address &lt; <span class="number">16</span>)  </span><br><span class="line">        Serial.print(<span class="string">"0"</span>);  </span><br><span class="line">      Serial.print(address, HEX);  </span><br><span class="line">      Serial.println(<span class="string">" !"</span>);  </span><br><span class="line">      nDevices++;  </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (error == <span class="number">4</span>)&#123;  </span><br><span class="line">      Serial.print(<span class="string">"Unknow error at address 0x"</span>);  </span><br><span class="line">      <span class="keyword">if</span> (address &lt; <span class="number">16</span>)  </span><br><span class="line">        Serial.print(<span class="string">"0"</span>);  </span><br><span class="line">      Serial.println(address, HEX);  </span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="keyword">if</span> (nDevices == <span class="number">0</span>)  </span><br><span class="line">    Serial.println(<span class="string">"No I2C devices found\n"</span>);  </span><br><span class="line">  <span class="keyword">else</span>  </span><br><span class="line">    Serial.println(<span class="string">"done\n"</span>);  </span><br><span class="line">  delay(<span class="number">5000</span>); <span class="comment">// wait 5 seconds for next scan  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>有时候买来的模块资料提供的i2c地址不正确，导致模块不能正常使用，只需要把模块按i2c接线到Arduino并烧录程序查看串口监视器就可以得到正确的i2c地址了！</p>
+<p>设置蓝牙模块代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AT 2<span class="comment">//en接2号引脚</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LED 13</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">      pinMode(LED,OUTPUT);</span><br><span class="line">      pinMode(AT,OUTPUT);</span><br><span class="line">      digitalWrite(AT,HIGH);</span><br><span class="line">      Serial.begin(<span class="number">38400</span>);<span class="comment">//这里应该和你的模块通信波特率一致</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT"</span>);</span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+NAME=Arduino"</span>);<span class="comment">//命名模块名</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+ROLE=0"</span>);<span class="comment">//设置主从模式：0从机，1主机</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+PSWD=1234"</span>);<span class="comment">//设置配对密码，如1234</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+UART=9600,0,0"</span>);<span class="comment">//设置波特率9600，停止位1，校验位无</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+RMAAD"</span>);<span class="comment">//清空配对列表</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">      digitalWrite(LED, HIGH);</span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">      digitalWrite(LED, LOW);</span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>参考：<a href="http://www.arduino.cn/forum.php?mod=viewthread&amp;tid=2961&amp;highlight=AT" target="_blank" rel="external">蓝牙HC05模块探究-设置AT指令</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Arduino/">Arduino</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-led-robot" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -284,7 +346,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>前段时间在创客群里看到一个用点阵LED屏做的超级萌萌哒的<a href="https://learn.adafruit.com/3d-printed-led-animation-bmo">小玩偶</a>，有声音LED屏就会有动画，非常有趣，恰好我有一个点阵LED，于是决定自己也做一个，在instructables上找了下发现真的有这个东西<br>叫<a href="http://www.instructables.com/id/Lip-Synching-Robot">Lip Syncing Robot</a>原版是直接把点阵屏焊上去Arduino pro mini的，我买的那个是用MAX7219驱动，看了一下作者的程序试着改成芯片驱动的，改到一半不会了[x_x]，问了一下作者用MAX7219的程序怎么写，第二天作者回复我了，现在任何一款Arduino都可以做了，还留了许多引脚方便以后添加新功能，不多说了，先看下面的图片和视频吧~~~<br><img src="/img/matrix_robot/front.jpg" alt="正面"><br>正面卖萌<br>
+              <p>前段时间在创客群里看到一个用点阵LED屏做的超级萌萌哒的<a href="https://learn.adafruit.com/3d-printed-led-animation-bmo">小玩偶</a>，有声音LED屏就会有动画，非常有趣，恰好我有一个点阵LED，于是决定自己也做一个，在instructables上找了下发现真的有这个东西<br>叫<a href="http://www.instructables.com/id/Lip-Synching-Robot">Lip Syncing Robot</a>原版是直接把点阵屏焊上去Arduino pro mini的，我买的那个是用MAX7219驱动，看了一下作者的程序试着改成芯片驱动的，改到一半不会了[x_x]，问了一下作者用MAX7219的程序怎么写，第二天作者回复我了，现在任何一款Arduino都可以做了，还留了许多引脚方便以后添加新功能，不多说了，先看下面的图片和视频吧~~~<br><img src="/media/matrix_robot/front.jpg" alt="正面"><br>正面卖萌<br>
           
       
     </div>
@@ -346,7 +408,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p><img src="/img/drone/RaceDrone.jpg" alt="穿越机"><br>暑假期间花了差不多1个月的时间组装了一架最近几年才流行起来的竞速无人机(穿越机)，把自己学习和组装无人机的经验写个帖子记录并分享一下，方便一下想组装的新手<br>想组装首先要对无人机有个深入的了解，然后去淘宝选购心仪的零件，建议把Krellzou的视频教程过一遍，<a href="www.fpvrace.cn">fpvrace</a>这是他的社区网站，有许多新手的视频教程，<br>无人机理论知识部分可以到<a href="www.modouwo.com">魔豆窝</a>这个网站上学习，比较详细。并且加几个穿越机爱好者群进去潜水学习：大力电子的KFP穿越技术讨论群—&gt;313787977；<br>FPVRACE穿越机技术交流—&gt;85204150，群里的大神比较多，有不懂的可以在群里提问请教！</p>
+              <p><img src="/media/drone/RaceDrone.jpg" alt="穿越机"><br>暑假期间花了差不多1个月的时间组装了一架最近几年才流行起来的竞速无人机(穿越机)，把自己学习和组装无人机的经验写个帖子记录并分享一下，方便一下想组装的新手<br>想组装首先要对无人机有个深入的了解，然后去淘宝选购心仪的零件，建议把Krellzou的视频教程过一遍，<a href="www.fpvrace.cn">fpvrace</a>这是他的社区网站，有许多新手的视频教程，<br>无人机理论知识部分可以到<a href="www.modouwo.com">魔豆窝</a>这个网站上学习，比较详细。并且加几个穿越机爱好者群进去潜水学习：大力电子的KFP穿越技术讨论群—&gt;313787977；<br>FPVRACE穿越机技术交流—&gt;85204150，群里的大神比较多，有不懂的可以在群里提问请教！</p>
 <p>我的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">机架：DALRC XR215Plus</span><br><span class="line">电机：致盈动力GT2205</span><br><span class="line">电调：DALRC XR20A</span><br><span class="line">飞控：SP Racing F3</span><br><span class="line">电池：花牌 1500mah 50C</span><br><span class="line">旋叶：大力5045BN</span><br></pre></td></tr></table></figure></p>
           
       
@@ -409,7 +471,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>今年去了MakerFaire in Shenzhen 2016(深圳制汇节)，全球创客盛会，收获满满，竟然让我认识网上很火的深圳美女创客SexyCyborg!<br>啥，你说什么？你还不知道什么是制汇节啊！？<a href="http://mp.weixin.qq.com/s?__biz=MzA4OTEzNzIxNQ==&amp;mid=2648454025&amp;idx=1&amp;sn=5c356b14ca7300d460edce15d884c5b8&amp;chksm=88371ad9bf4093cf328fe4ed571671b6c548aaace8f811d0be6ec8f06bf69a9b6dd77de0ece4&amp;mpshare=1&amp;scene=2&amp;srcid=1018mocC6iPsXOoIXB7y6swE&amp;from=timeline&amp;isappinstalled=0#wechat_redirect">戳我</a>或赶紧拿起你的手机用微信关注Maker Faire制汇节的公众号看看！<br>只是这是制汇节恰好碰上台风“海马”延期了一天，10月20号得知延期一天，原本21号下午准备去的，计划全打乱了，要不然晚上肯定看穿戴式时装秀的。<br>本次亮点：机器人格斗赛，无人机表演赛，可穿戴式时装秀，日本秋叶原电子音乐趴体，3D天文馆，星光流动交互灯…<br><img src="/img/MFSZ2016/EXIT_A.jpg" alt="海上世界A出口"><br>海上世界地铁A出口的制汇节大海报<br>
+              <p>今年去了MakerFaire in Shenzhen 2016(深圳制汇节)，全球创客盛会，收获满满，竟然让我认识网上很火的深圳美女创客SexyCyborg!<br>啥，你说什么？你还不知道什么是制汇节啊！？<a href="http://mp.weixin.qq.com/s?__biz=MzA4OTEzNzIxNQ==&amp;mid=2648454025&amp;idx=1&amp;sn=5c356b14ca7300d460edce15d884c5b8&amp;chksm=88371ad9bf4093cf328fe4ed571671b6c548aaace8f811d0be6ec8f06bf69a9b6dd77de0ece4&amp;mpshare=1&amp;scene=2&amp;srcid=1018mocC6iPsXOoIXB7y6swE&amp;from=timeline&amp;isappinstalled=0#wechat_redirect">戳我</a>或赶紧拿起你的手机用微信关注Maker Faire制汇节的公众号看看！<br>只是这是制汇节恰好碰上台风“海马”延期了一天，10月20号得知延期一天，原本21号下午准备去的，计划全打乱了，要不然晚上肯定看穿戴式时装秀的。<br>本次亮点：机器人格斗赛，无人机表演赛，可穿戴式时装秀，日本秋叶原电子音乐趴体，3D天文馆，星光流动交互灯…<br><img src="/media/MFSZ2016/EXIT_A.jpg" alt="海上世界A出口"><br>海上世界地铁A出口的制汇节大海报<br>
           
       
     </div>
@@ -476,7 +538,7 @@
 <li><a href="http://mp.weixin.qq.com/s?__biz=MzI5MTE4MzM3OA==&amp;mid=2676603921&amp;idx=1&amp;sn=9e45c1f574c542fec7d2f4f00e4651cd&amp;scene=1&amp;srcid=09079TXuEzRzibVwPcM2055C&amp;from=singlemessage&amp;isappinstalled=0#wechat_redirect">欢迎观摩：相约教师节，红棉创客导师8小时造物工坊</a></li>
 <li><a href="http://mp.weixin.qq.com/s?__biz=MzA3MDE1MTIyOA==&amp;mid=2651658689&amp;idx=1&amp;sn=685ee710413f9cc02817caf5af1e66c2&amp;scene=1&amp;srcid=0907DPXkrnlSzb3rFEH8ySgG&amp;from=singlemessage&amp;isappinstalled=0#wechat_redirect">首届创新创客大赛暨创客比赛启动仪式 </a></li>
 </ul>
-<p><img src="/img/kapokmaker/educenter.jpg" alt="市电教馆"><br>红棉创客教师节造物工坊活动就在这里的六楼<br>
+<p><img src="/media/kapokmaker/educenter.jpg" alt="市电教馆"><br>红棉创客教师节造物工坊活动就在这里的六楼<br>
           
       
     </div>
@@ -580,184 +642,10 @@
 
 
   
-    <article id="post-MakerEDU" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/05/29/MakerEDU/" class="article-date">
-      <time datetime="2016-05-29T05:34:55.000Z" itemprop="datePublished">2016-05-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/29/MakerEDU/">广州创客教育展</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>2016年5月27~29号广州保利世贸博览会举行第二届创客教育展会，多谢制作BB8的师兄和创新林创客空间送的门票！我有机会去参观~~不多说看图吧(挑了部分)，哈哈哈<br><img src="/img/bb8.jpg" alt="img"><br>这个就是星球大战中的人见人爱的BB8机器人啦，是不是很可爱呢<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创客/">创客</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/05/29/MakerEDU/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-testimg" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/18/testimg/" class="article-date">
-      <time datetime="2016-05-18T14:02:25.000Z" itemprop="datePublished">2016-05-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/18/testimg/">测试页面-高中珍藏照片</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>这可憋了我一年了啊~~~~大家请看图<br><img src="/img/yinhong.jpg" alt="img"><br> 高三16，功成名就，一支独秀，前程锦绣—好像是这样的，不太记得口号了哈哈<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/05/18/testimg/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/15/hello-world/" class="article-date">
-      <time datetime="2016-05-14T17:39:15.610Z" itemprop="datePublished">2016-05-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/15/hello-world/">Hello World!</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>欢迎访问我的新个人站 ，本博客采用了<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! 测试能否访问:P！<br>以后我会在这里分享一些有趣的事情，哈哈还有脑洞大开的玩意！</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
@@ -765,7 +653,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016 好奇吖斌
+                2016-2017 好奇吖斌
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
