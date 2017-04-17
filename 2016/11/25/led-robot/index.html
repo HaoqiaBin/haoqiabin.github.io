@@ -24,7 +24,12 @@
 <meta property="og:image" content="http://haoqiabin.cn/media/matrix_robot/material.jpg">
 <meta property="og:image" content="http://haoqiabin.cn/media/matrix_robot/hand.png">
 <meta property="og:image" content="http://haoqiabin.cn/media/matrix_robot/jiexiantu.png">
-<meta property="og:updated_time" content="2017-03-18T17:09:13.379Z">
+<meta property="og:image" content="http://haoqiabin.cn/media/matrix_robot/hand.jpg">
+<meta property="og:image" content="http://haoqiabin.cn/media/matrix_robot/hand_front.jpg">
+<meta property="og:image" content="http://haoqiabin.cn/media/matrix_robot/hand_side.jpg">
+<meta property="og:image" content="http://haoqiabin.cn/media/matrix_robot/meng1.jpg">
+<meta property="og:image" content="http://haoqiabin.cn/media/matrix_robot/meng2.jpg">
+<meta property="og:updated_time" content="2017-04-17T10:04:40.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="点阵LED卖萌表情包(*_*)+假唱机器人">
 <meta name="twitter:description" content="前段时间在创客群里看到一个用点阵LED屏做的超级萌萌哒的小玩偶，有声音LED屏就会有动画，非常有趣，恰好我有一个点阵LED，于是决定自己也做一个，在instructables上找了下发现真的有这个东西叫Lip Syncing Robot原版是直接把点阵屏焊上去Arduino pro mini的，我买的那个是用MAX7219驱动，看了一下作者的程序试着改成芯片驱动的，改到一半不会了[x_x]，问了一">
@@ -312,6 +317,7 @@
 </ul>
 <p><img src="/media/matrix_robot/material.jpg" alt="材料"><br><img src="/media/matrix_robot/hand.png" alt="手"><br>后来又加了两只手上去，感觉更萌。外壳文件已经是加了手的版本<br><a href="/media/matrix_robot/卖萌表情包.rar">外壳文件</a>外壳是Solidwork2016建模的，听说SW文件低版本打不开<br>自己到某宝上选购零件吧，Arduino pro mini需要买一个USB转TTL的模块做程序下载器，第一次玩的要买一个<br>外壳文件自己找3D打印机打印出来</p>
 <p><strong>接线图：</strong><img src="/media/matrix_robot/jiexiantu.png" alt="接线图"><br>电路按照上图接就ok了，当然你也可以修改程序里的引脚，按自己想的去接。声音传感器把原来的排针去掉，不然装不进外壳<br>    DIN—-D2<br>     CS —-D3<br>      SLK—-D4<br>      OUT—-A4<br><a href="/media/matrix_robot/程序文件.rar">程序文件</a>里面有两个程序，分别是表情包程序和假唱机器人程序。<br>下载解压后，用Arduino IDE打开程序烧录进去pro mini就可以去卖萌了。<br><a href="http://xantorohara.github.io/led-matrix-editor/" target="_blank" rel="external">LED-Matrix-Editor</a>这是个在线编辑点阵LED图案的工具，可以自己改成自己喜欢的图案，然后复制代码到表情包程序里修改表情。</p>
+<h1 id="更新外壳"><a href="#更新外壳" class="headerlink" title="更新外壳"></a>更新外壳</h1><p><img src="/media/matrix_robot/hand.jpg" alt="正面"><br><img src="/media/matrix_robot/hand_front.jpg" alt="侧面"><br><img src="/media/matrix_robot/hand_side.jpg" alt="单手撑"><br><img src="/media/matrix_robot/meng1.jpg" alt="萌1"><br><img src="/media/matrix_robot/meng2.jpg" alt="萌2"></p>
 <p>一起做来玩吧。</p>
 
       
@@ -324,7 +330,7 @@
         <p><span>本文标题:</span><a href="/2016/11/25/led-robot/">点阵LED卖萌表情包(*_*)+假唱机器人</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">好奇吖斌</a></p>
         <p><span>发布时间:</span>2016-11-25, 14:51:40</p>
-        <p><span>最后更新:</span>2017-03-19, 01:09:13</p>
+        <p><span>最后更新:</span>2017-04-17, 18:04:40</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/25/led-robot/" title="点阵LED卖萌表情包(*_*)+假唱机器人">http://haoqiabin.cn/2016/11/25/led-robot/</a>
             <span class="copy-path" data-clipboard-text="原文: http://haoqiabin.cn/2016/11/25/led-robot/　　作者: 好奇吖斌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -359,7 +365,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#更新外壳"><span class="toc-number">1.</span> <span class="toc-text">更新外壳</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
