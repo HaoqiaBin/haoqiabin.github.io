@@ -11,20 +11,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>Arduino一些有用的代码 | 探索的好奇心</title>
-  <meta name="description" content="玩了一年多的Arduino，走过一些坑，收集了一些有用的辅助代码。
-查找i2c设备地址代码：1234567891011121314151617181920212223242526272829303132333435363738#include &amp;lt;Wire.h&amp;gt;     void setup()&amp;#123;    Wire.begin();    Serial.begin(9600);">
+  <title>Arduino UNO增强版Roboard Pro测试与使用说明 | 探索的好奇心</title>
+  <meta name="description" content="收到pz_cloud送测的增强版UNO–&amp;gt;RoboardPro，好嗨森😀~~，他说他不太有空，所以送一块我测试让我写一下使用说明地址在这：http://www.arduino.cn/forum.php?mod=viewthread&amp;amp;tid=46148&amp;amp;highlight=Arduino%E5%A2%9E%E5%BC%BA%E7%89%88或者这里：http://www.ge">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arduino一些有用的代码">
-<meta property="og:url" content="http://haoqiabin.cn/2017/03/27/usefulcode/index.html">
+<meta property="og:title" content="Arduino UNO增强版Roboard Pro测试与使用说明">
+<meta property="og:url" content="http://haoqiabin.cn/2017/06/10/RoboardPro/index.html">
 <meta property="og:site_name" content="探索的好奇心">
-<meta property="og:description" content="玩了一年多的Arduino，走过一些坑，收集了一些有用的辅助代码。
-查找i2c设备地址代码：1234567891011121314151617181920212223242526272829303132333435363738#include &amp;lt;Wire.h&amp;gt;     void setup()&amp;#123;    Wire.begin();    Serial.begin(9600);">
-<meta property="og:updated_time" content="2017-03-28T06:39:29.167Z">
+<meta property="og:description" content="收到pz_cloud送测的增强版UNO–&amp;gt;RoboardPro，好嗨森😀~~，他说他不太有空，所以送一块我测试让我写一下使用说明地址在这：http://www.arduino.cn/forum.php?mod=viewthread&amp;amp;tid=46148&amp;amp;highlight=Arduino%E5%A2%9E%E5%BC%BA%E7%89%88或者这里：http://www.ge">
+<meta property="og:image" content="http://haoqiabin.cn/media/RoboardPro/inbox.jpg">
+<meta property="og:image" content="http://haoqiabin.cn/media/RoboardPro/front.jpg">
+<meta property="og:image" content="http://haoqiabin.cn/media/RoboardPro/back.jpg">
+<meta property="og:image" content="http://haoqiabin.cn/media/RoboardPro/com.png">
+<meta property="og:image" content="http://haoqiabin.cn/media/RoboardPro/D17BT.png">
+<meta property="og:image" content="http://haoqiabin.cn/media/RoboardPro/AT-set.png">
+<meta property="og:image" content="http://haoqiabin.cn/media/RoboardPro/matchBT.png">
+<meta property="og:updated_time" content="2017-06-11T08:16:45.292Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Arduino一些有用的代码">
-<meta name="twitter:description" content="玩了一年多的Arduino，走过一些坑，收集了一些有用的辅助代码。
-查找i2c设备地址代码：1234567891011121314151617181920212223242526272829303132333435363738#include &amp;lt;Wire.h&amp;gt;     void setup()&amp;#123;    Wire.begin();    Serial.begin(9600);">
+<meta name="twitter:title" content="Arduino UNO增强版Roboard Pro测试与使用说明">
+<meta name="twitter:description" content="收到pz_cloud送测的增强版UNO–&amp;gt;RoboardPro，好嗨森😀~~，他说他不太有空，所以送一块我测试让我写一下使用说明地址在这：http://www.arduino.cn/forum.php?mod=viewthread&amp;amp;tid=46148&amp;amp;highlight=Arduino%E5%A2%9E%E5%BC%BA%E7%89%88或者这里：http://www.ge">
+<meta name="twitter:image" content="http://haoqiabin.cn/media/RoboardPro/inbox.jpg">
   
     <link rel="alternative" href="/atom.xml" title="探索的好奇心" type="application/atom+xml">
   
@@ -254,11 +259,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-usefulcode" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-RoboardPro" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/27/usefulcode/" class="article-date">
-      <time datetime="2017-03-27T13:46:59.479Z" itemprop="datePublished">2017-03-27</time>
+      <a href="/2017/06/10/RoboardPro/" class="article-date">
+      <time datetime="2017-06-10T15:39:33.000Z" itemprop="datePublished">2017-06-10</time>
 </a>
     </div>
   
@@ -271,7 +276,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Arduino一些有用的代码
+      Arduino UNO增强版Roboard Pro测试与使用说明
     </h1>
   
 
@@ -292,11 +297,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>玩了一年多的Arduino，走过一些坑，收集了一些有用的辅助代码。</p>
-<p>查找i2c设备地址代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Wire.h&gt;</span>  </span></span><br><span class="line">   </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span>&#123;  </span><br><span class="line">  Wire.begin();  </span><br><span class="line">  Serial.begin(<span class="number">9600</span>);  </span><br><span class="line">  Serial.println(<span class="string">"\nI2C Scanner"</span>);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span>&#123;  </span><br><span class="line">  byte error, address;  </span><br><span class="line">  <span class="keyword">int</span> nDevices;  </span><br><span class="line">  Serial.println(<span class="string">"Scanning..."</span>);  </span><br><span class="line">  nDevices = <span class="number">0</span>;  </span><br><span class="line">  <span class="keyword">for</span> (address = <span class="number">1</span>; address &lt; <span class="number">127</span>; address++ )&#123;  </span><br><span class="line">    <span class="comment">// The i2c_scanner uses the return value of  </span></span><br><span class="line">    <span class="comment">// the Write.endTransmisstion to see if  </span></span><br><span class="line">    <span class="comment">// a device did acknowledge to the address.  </span></span><br><span class="line">    Wire.beginTransmission(address);  </span><br><span class="line">    error = Wire.endTransmission();  </span><br><span class="line">    <span class="keyword">if</span> (error == <span class="number">0</span>)&#123;  </span><br><span class="line">      Serial.print(<span class="string">"I2C device found at address 0x"</span>);  </span><br><span class="line">      <span class="keyword">if</span> (address &lt; <span class="number">16</span>)  </span><br><span class="line">        Serial.print(<span class="string">"0"</span>);  </span><br><span class="line">      Serial.print(address, HEX);  </span><br><span class="line">      Serial.println(<span class="string">" !"</span>);  </span><br><span class="line">      nDevices++;  </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (error == <span class="number">4</span>)&#123;  </span><br><span class="line">      Serial.print(<span class="string">"Unknow error at address 0x"</span>);  </span><br><span class="line">      <span class="keyword">if</span> (address &lt; <span class="number">16</span>)  </span><br><span class="line">        Serial.print(<span class="string">"0"</span>);  </span><br><span class="line">      Serial.println(address, HEX);  </span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="keyword">if</span> (nDevices == <span class="number">0</span>)  </span><br><span class="line">    Serial.println(<span class="string">"No I2C devices found\n"</span>);  </span><br><span class="line">  <span class="keyword">else</span>  </span><br><span class="line">    Serial.println(<span class="string">"done\n"</span>);  </span><br><span class="line">  delay(<span class="number">5000</span>); <span class="comment">// wait 5 seconds for next scan  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>有时候买来的模块资料提供的i2c地址不正确，导致模块不能正常使用，只需要把模块按i2c接线到Arduino并烧录程序查看串口监视器就可以得到正确的i2c地址了！</p>
-<p>设置蓝牙模块代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AT 2<span class="comment">//en接2号引脚</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LED 13</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">      pinMode(LED,OUTPUT);</span><br><span class="line">      pinMode(AT,OUTPUT);</span><br><span class="line">      digitalWrite(AT,HIGH);</span><br><span class="line">      Serial.begin(<span class="number">38400</span>);<span class="comment">//这里应该和你的模块通信波特率一致</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT"</span>);</span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+NAME=Arduino"</span>);<span class="comment">//命名模块名</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+ROLE=0"</span>);<span class="comment">//设置主从模式：0从机，1主机</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+PSWD=1234"</span>);<span class="comment">//设置配对密码，如1234</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+UART=9600,0,0"</span>);<span class="comment">//设置波特率9600，停止位1，校验位无</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+RMAAD"</span>);<span class="comment">//清空配对列表</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">      digitalWrite(LED, HIGH);</span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">      digitalWrite(LED, LOW);</span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>参考：<a href="http://www.arduino.cn/forum.php?mod=viewthread&amp;tid=2961&amp;highlight=AT" target="_blank" rel="external">蓝牙HC05模块探究-设置AT指令</a></p>
+        <p>收到pz_cloud送测的增强版UNO–&gt;RoboardPro，好嗨森😀~~，他说他不太有空，所以送一块我测试让我写一下使用说明<br>地址在这：<a href="http://www.arduino.cn/forum.php?mod=viewthread&amp;tid=46148&amp;highlight=Arduino%E5%A2%9E%E5%BC%BA%E7%89%88" target="_blank" rel="external">http://www.arduino.cn/forum.php?mod=viewthread&amp;tid=46148&amp;highlight=Arduino%E5%A2%9E%E5%BC%BA%E7%89%88</a><br>或者这里：<a href="http://www.geek-workshop.com/thread-28923-1-1.html" target="_blank" rel="external">http://www.geek-workshop.com/thread-28923-1-1.html</a></p>
+<h1 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h1><p><img src="/media/RoboardPro/inbox.jpg" alt="盒子"><br>快递收到了，打开包裹，板子包装很结实还有盒子装着呢！赞~<br><img src="/media/RoboardPro/front.jpg" alt="正面"><br>新特性：</p>
+<ul>
+<li>板载一枚IMU(mpu6050)</li>
+<li>板载一枚HC05蓝牙模块</li>
+<li>集成L298P电机驱动，可驱动两路电机，自锁式电机线接口</li>
+<li>Micro USB接口</li>
+<li>DC开关</li>
+<li>公母排针都有(虽然未焊)，厉害了我的哥！<br><img src="/media/RoboardPro/back.jpg" alt="背面"><br>背面有个蓝牙模块<a id="more"></a>
+增强版UNO烧写程序板子型号选Arduino/Genuino Micro，可以在设备管理器里看到<br><img src="/media/RoboardPro/com.png" alt="板子型号"></li>
+</ul>
+<h1 id="mpu6050测试"><a href="#mpu6050测试" class="headerlink" title="mpu6050测试"></a><strong>mpu6050测试</strong></h1><iframe height="540" width="680" src="http://player.youku.com/embed/XMjgxNzYzMjgwMA==" frameborder="0" 'allowfullscreen'=""></iframe><br>这个测试在网上的论坛找程序刷进去就可以了<br><br># <strong>蓝牙模块设置</strong><br>重点说一下板载蓝牙模块的使用<br>从原理图可以看到板子17号引脚是接在蓝牙模块的设置口上的，所以设置时要把17号引脚上拉置高才能进入蓝牙模块的AT模式，蓝牙模块AT模式波特率为38400。<br><img src="/media/RoboardPro/D17BT.png" alt="蓝牙模块原理图"><br>蓝牙模块设置程序<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">//蓝牙模块AT模式波特率为38400，不需要修改</span></span><br><span class="line">  Serial.begin(<span class="number">38400</span>);</span><br><span class="line">  Serial1.begin(<span class="number">38400</span>);<span class="comment">//&lt;--这里是蓝牙模块的串口</span></span><br><span class="line">  <span class="comment">//设置上拉17号引脚进入AT模式</span></span><br><span class="line">  pinMode(<span class="number">17</span>,<span class="number">1</span>);</span><br><span class="line">  digitalWri(<span class="number">17</span>,<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="comment">// read from port 1, send to port 0:</span></span><br><span class="line">  <span class="keyword">if</span> (Serial1.available()) &#123;</span><br><span class="line">    <span class="keyword">int</span> inByte = Serial1.read();</span><br><span class="line">    Serial.write(inByte);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// read from port 0, send to port 1:</span></span><br><span class="line">  <span class="keyword">if</span> (Serial.available()) &#123;</span><br><span class="line">    <span class="keyword">int</span> inByte = Serial.read();</span><br><span class="line">    Serial1.write(inByte);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>烧录蓝牙模块设置程序后重新上电，在Arduino IDE里打开串口进行AT命令设置<br><img src="/media/RoboardPro/AT-set.png" alt="串口设置"><br>如图红框设置，NL和CR，38400波特率，输入AT回车发送返回OK就说明进入了AT模式<br><br>蓝牙模块设置参考：<a href="http://www.arduino.cn/forum.php?mod=viewthread&amp;tid=2961&amp;highlight=AT" target="_blank" rel="external">蓝牙HC05模块探究-设置AT指令</a><br>设置名称:AT+NAME=你想设的名称，密码:AT+PSWD=你想设的密码，波特率:AT+UART=115200,0,0就够了<br>这样蓝牙模块就设置好啦！<br><br>蓝牙模块测试程序–蓝牙遥控LED<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">   <span class="comment">// 波特率AT模式为38400，从机模式为115200</span></span><br><span class="line">  Serial1.begin(<span class="number">115200</span>);<span class="comment">//&lt;--按照你设置的波特率填</span></span><br><span class="line">  pinMode(<span class="number">13</span>, OUTPUT);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">   <span class="comment">//注意这里是Serial1而不是Serial，要不然蓝牙连接后遥控不了！！！</span></span><br><span class="line">   <span class="keyword">while</span>(Serial1.available())</span><br><span class="line">   &#123;</span><br><span class="line">     <span class="keyword">char</span> ch=Serial1.read();</span><br><span class="line">      <span class="keyword">if</span>(ch==<span class="string">'1'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">          Serial1.write(<span class="string">"Serial--13--high"</span>);</span><br><span class="line">          Serial1.write(<span class="string">"\n"</span>);<span class="comment">//返回到手机调试程序上</span></span><br><span class="line">          digitalWrite(<span class="number">13</span>, HIGH);</span><br><span class="line">        &#125;</span><br><span class="line">       <span class="keyword">if</span>(ch==<span class="string">'2'</span>)</span><br><span class="line">       &#123;</span><br><span class="line">        Serial1.write(<span class="string">"Serial--13--low"</span>);</span><br><span class="line">        Serial1.write(<span class="string">"\n"</span>);</span><br><span class="line">        digitalWrite(<span class="number">13</span>, LOW);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br># <strong>注意写程序的时候由于蓝牙模块不是接在Serial上的，而是第二个串口里所以Serial后面要加数字1</strong><br>设置好蓝牙模块后烧写上面的蓝牙遥控LED测试程序，打开你的手机蓝牙搜索看看，输入密码就可配对了<br><img src="/media/RoboardPro/matchBT.png" alt="配对蓝牙模块"><br><iframe height="540" width="680" src="http://player.youku.com/embed/XMjgxNzk2MjIzMg==" frameborder="0" 'allowfullscreen'=""></iframe>
+
+<h1 id="电机驱动"><a href="#电机驱动" class="headerlink" title="电机驱动"></a><strong>电机驱动</strong></h1><p>引脚与电机驱动关系<br>D7–IN1<br>D8–IN2<br>A4–IN3<br>A5–IN4<br>D6–ENA<br>D5–ENB</p>
+<p>写程序的时候按照这些引脚去定义就OK了，手头没那么多零件和工具这个就暂时不测了</p>
 
       
     </div>
@@ -305,13 +320,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/27/usefulcode/">Arduino一些有用的代码</a></p>
+        <p><span>本文标题:</span><a href="/2017/06/10/RoboardPro/">Arduino UNO增强版Roboard Pro测试与使用说明</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">好奇吖斌</a></p>
-        <p><span>发布时间:</span>2017-03-27, 21:46:59</p>
-        <p><span>最后更新:</span>2017-03-28, 14:39:29</p>
+        <p><span>发布时间:</span>2017-06-10, 23:39:33</p>
+        <p><span>最后更新:</span>2017-06-11, 16:16:45</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/27/usefulcode/" title="Arduino一些有用的代码">http://haoqiabin.cn/2017/03/27/usefulcode/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://haoqiabin.cn/2017/03/27/usefulcode/　　作者: 好奇吖斌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/06/10/RoboardPro/" title="Arduino UNO增强版Roboard Pro测试与使用说明">http://haoqiabin.cn/2017/06/10/RoboardPro/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://haoqiabin.cn/2017/06/10/RoboardPro/　　作者: 好奇吖斌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -323,16 +338,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/04/16/pet-toy/">
-                    宠物互动--逗宠萌物
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/11/25/led-robot/">
-                    点阵LED卖萌表情包(*_*)+假唱机器人
+                <a href="/2017/04/16/pet-toy/">
+                    宠物互动--逗宠萌物
                 </a>
             </div>
         
@@ -343,7 +352,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#开箱"><span class="toc-number">1.</span> <span class="toc-text">开箱</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#mpu6050测试"><span class="toc-number">2.</span> <span class="toc-text">mpu6050测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#电机驱动"><span class="toc-number">3.</span> <span class="toc-text">电机驱动</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -400,7 +409,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Arduino一些有用的代码　| 探索的好奇心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Arduino UNO增强版Roboard Pro测试与使用说明　| 探索的好奇心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -420,15 +429,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/04/16/pet-toy/" title="上一篇: 宠物互动--逗宠萌物">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/11/25/led-robot/" title="下一篇: 点阵LED卖萌表情包(*_*)+假唱机器人">
+            <a href="/2017/04/16/pet-toy/" title="下一篇: 宠物互动--逗宠萌物">
                 <i class="fa fa-angle-right"></i>
             </a>
         
