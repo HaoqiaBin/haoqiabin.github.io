@@ -11,20 +11,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title>Arduino一些有用的代码 | 探索的好奇心</title>
-  <meta name="description" content="玩了一年多的Arduino，走过一些坑，收集了一些有用的辅助代码。
-查找i2c设备地址代码：1234567891011121314151617181920212223242526272829303132333435363738#include &amp;lt;Wire.h&amp;gt;     void setup()&amp;#123;    Wire.begin();    Serial.begin(9600);">
+  <title>草稿版麦克纳姆轮小车 | 探索的好奇心</title>
+  <meta name="description" content="前段时间去了华南理工看RoboMaster全国大学生机器人大赛南部赛区，地头蛇华工果断是分区赛冠军了，看到传说中的华工猫步果然很炫，我最喜欢的就是步兵机器人了，麦克纳姆轮+射击云台
+帅气的步兵机器人😍令人着谜
+没能够有机会参加这样的机器人大赛☹️，于是乎就有了下面的草稿版麦克纳姆轮小车~~
+小车功能比较简单，手机蓝牙遥控，可以全方位转向一共有10个转向：前进，后退，横向向左，横向向右，正转(顺时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arduino一些有用的代码">
-<meta property="og:url" content="http://www.haoqiabin.cn/2017/03/27/usefulcode/index.html">
+<meta property="og:title" content="草稿版麦克纳姆轮小车">
+<meta property="og:url" content="http://www.haoqiabin.cn/2017/08/25/MecanumWheelCar/index.html">
 <meta property="og:site_name" content="探索的好奇心">
-<meta property="og:description" content="玩了一年多的Arduino，走过一些坑，收集了一些有用的辅助代码。
-查找i2c设备地址代码：1234567891011121314151617181920212223242526272829303132333435363738#include &amp;lt;Wire.h&amp;gt;     void setup()&amp;#123;    Wire.begin();    Serial.begin(9600);">
-<meta property="og:updated_time" content="2017-03-28T06:39:29.167Z">
+<meta property="og:description" content="前段时间去了华南理工看RoboMaster全国大学生机器人大赛南部赛区，地头蛇华工果断是分区赛冠军了，看到传说中的华工猫步果然很炫，我最喜欢的就是步兵机器人了，麦克纳姆轮+射击云台
+帅气的步兵机器人😍令人着谜
+没能够有机会参加这样的机器人大赛☹️，于是乎就有了下面的草稿版麦克纳姆轮小车~~
+小车功能比较简单，手机蓝牙遥控，可以全方位转向一共有10个转向：前进，后退，横向向左，横向向右，正转(顺时">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/RM_GZ.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/20160826-SZ-RM-SY6660.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/3dprint_wheel.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/zuzhuang.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/lunzi.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/chesheng.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/ok.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/anzhuan.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/jiexiantu.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/jiexian.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/前后.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/左右.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/左右上.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/左右下.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/正反转.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/BTSPP.png">
+<meta property="og:updated_time" content="2017-08-25T09:17:33.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Arduino一些有用的代码">
-<meta name="twitter:description" content="玩了一年多的Arduino，走过一些坑，收集了一些有用的辅助代码。
-查找i2c设备地址代码：1234567891011121314151617181920212223242526272829303132333435363738#include &amp;lt;Wire.h&amp;gt;     void setup()&amp;#123;    Wire.begin();    Serial.begin(9600);">
+<meta name="twitter:title" content="草稿版麦克纳姆轮小车">
+<meta name="twitter:description" content="前段时间去了华南理工看RoboMaster全国大学生机器人大赛南部赛区，地头蛇华工果断是分区赛冠军了，看到传说中的华工猫步果然很炫，我最喜欢的就是步兵机器人了，麦克纳姆轮+射击云台
+帅气的步兵机器人😍令人着谜
+没能够有机会参加这样的机器人大赛☹️，于是乎就有了下面的草稿版麦克纳姆轮小车~~
+小车功能比较简单，手机蓝牙遥控，可以全方位转向一共有10个转向：前进，后退，横向向左，横向向右，正转(顺时">
+<meta name="twitter:image" content="http://www.haoqiabin.cn/media/Mecanum_Wheel/RM_GZ.jpg">
   
     <link rel="alternative" href="/atom.xml" title="探索的好奇心" type="application/atom+xml">
   
@@ -260,11 +283,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-usefulcode" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MecanumWheelCar" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/03/27/usefulcode/" class="article-date">
-      <time datetime="2017-03-27T13:46:59.479Z" itemprop="datePublished">2017-03-27</time>
+      <a href="/2017/08/25/MecanumWheelCar/" class="article-date">
+      <time datetime="2017-08-25T09:17:25.000Z" itemprop="datePublished">2017-08-25</time>
 </a>
     </div>
   
@@ -277,7 +300,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Arduino一些有用的代码
+      草稿版麦克纳姆轮小车
     </h1>
   
 
@@ -287,10 +310,6 @@
         
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Arduino/">Arduino</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -298,12 +317,136 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>玩了一年多的Arduino，走过一些坑，收集了一些有用的辅助代码。</p>
-<p>查找i2c设备地址代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Wire.h&gt;</span>  </span></span><br><span class="line">   </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span>&#123;  </span><br><span class="line">  Wire.begin();  </span><br><span class="line">  Serial.begin(<span class="number">9600</span>);  </span><br><span class="line">  Serial.println(<span class="string">"\nI2C Scanner"</span>);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span>&#123;  </span><br><span class="line">  byte error, address;  </span><br><span class="line">  <span class="keyword">int</span> nDevices;  </span><br><span class="line">  Serial.println(<span class="string">"Scanning..."</span>);  </span><br><span class="line">  nDevices = <span class="number">0</span>;  </span><br><span class="line">  <span class="keyword">for</span> (address = <span class="number">1</span>; address &lt; <span class="number">127</span>; address++ )&#123;  </span><br><span class="line">    <span class="comment">// The i2c_scanner uses the return value of  </span></span><br><span class="line">    <span class="comment">// the Write.endTransmisstion to see if  </span></span><br><span class="line">    <span class="comment">// a device did acknowledge to the address.  </span></span><br><span class="line">    Wire.beginTransmission(address);  </span><br><span class="line">    error = Wire.endTransmission();  </span><br><span class="line">    <span class="keyword">if</span> (error == <span class="number">0</span>)&#123;  </span><br><span class="line">      Serial.print(<span class="string">"I2C device found at address 0x"</span>);  </span><br><span class="line">      <span class="keyword">if</span> (address &lt; <span class="number">16</span>)  </span><br><span class="line">        Serial.print(<span class="string">"0"</span>);  </span><br><span class="line">      Serial.print(address, HEX);  </span><br><span class="line">      Serial.println(<span class="string">" !"</span>);  </span><br><span class="line">      nDevices++;  </span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (error == <span class="number">4</span>)&#123;  </span><br><span class="line">      Serial.print(<span class="string">"Unknow error at address 0x"</span>);  </span><br><span class="line">      <span class="keyword">if</span> (address &lt; <span class="number">16</span>)  </span><br><span class="line">        Serial.print(<span class="string">"0"</span>);  </span><br><span class="line">      Serial.println(address, HEX);  </span><br><span class="line">    &#125;  </span><br><span class="line">  &#125;  </span><br><span class="line">  <span class="keyword">if</span> (nDevices == <span class="number">0</span>)  </span><br><span class="line">    Serial.println(<span class="string">"No I2C devices found\n"</span>);  </span><br><span class="line">  <span class="keyword">else</span>  </span><br><span class="line">    Serial.println(<span class="string">"done\n"</span>);  </span><br><span class="line">  delay(<span class="number">5000</span>); <span class="comment">// wait 5 seconds for next scan  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>有时候买来的模块资料提供的i2c地址不正确，导致模块不能正常使用，只需要把模块按i2c接线到Arduino并烧录程序查看串口监视器就可以得到正确的i2c地址了！</p>
-<p>设置蓝牙模块代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> AT 2<span class="comment">//en接2号引脚</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LED 13</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">      pinMode(LED,OUTPUT);</span><br><span class="line">      pinMode(AT,OUTPUT);</span><br><span class="line">      digitalWrite(AT,HIGH);</span><br><span class="line">      Serial.begin(<span class="number">38400</span>);<span class="comment">//这里应该和你的模块通信波特率一致</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT"</span>);</span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+NAME=Arduino"</span>);<span class="comment">//命名模块名</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+ROLE=0"</span>);<span class="comment">//设置主从模式：0从机，1主机</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+PSWD=1234"</span>);<span class="comment">//设置配对密码，如1234</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+UART=9600,0,0"</span>);<span class="comment">//设置波特率9600，停止位1，校验位无</span></span><br><span class="line">      delay(<span class="number">100</span>);</span><br><span class="line">      Serial.println(<span class="string">"AT+RMAAD"</span>);<span class="comment">//清空配对列表</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">      digitalWrite(LED, HIGH);</span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">      digitalWrite(LED, LOW);</span><br><span class="line">      delay(<span class="number">500</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>参考：<a href="http://www.arduino.cn/forum.php?mod=viewthread&amp;tid=2961&amp;highlight=AT" target="_blank" rel="external">蓝牙HC05模块探究-设置AT指令</a></p>
-
+        <p>前段时间去了华南理工看RoboMaster全国大学生机器人大赛南部赛区，地头蛇华工果断是分区赛冠军了，看到传说中的华工猫步果然很炫，我最喜欢的就是步兵机器人了，麦克纳姆轮+射击云台</p>
+<p><center><img src="/media/Mecanum_Wheel/RM_GZ.jpg" alt="RM华工分区赛"></center><br>帅气的步兵机器人😍令人着谜</p>
+<p><center><img src="/media/Mecanum_Wheel/20160826-SZ-RM-SY6660.jpg" alt="RM步兵"></center><br>没能够有机会参加这样的机器人大赛☹️，于是乎就有了下面的草稿版麦克纳姆轮小车~~</p>
+<p><center><iframe height="620" width="860" src="http://player.youku.com/embed/XMjk3ODE5OTI5Ng==" frameborder="0" 'allowfullscreen'=""></iframe></center><br>小车功能比较简单，手机蓝牙遥控，可以全方位转向<br>一共有10个转向：前进，后退，横向向左，横向向右，正转(顺时针)，反转(逆时针)，左斜上，右斜上，左斜下，右斜下</p>
+<h1 id="零件清单："><a href="#零件清单：" class="headerlink" title="零件清单："></a>零件清单：</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">麦克纳姆轮</td>
+<td style="text-align:center">4个(两正两反)</td>
+</tr>
+<tr>
+<td style="text-align:center">小滚轮</td>
+<td style="text-align:center">56个</td>
+</tr>
+<tr>
+<td style="text-align:center">M3螺母或M3自锁螺母</td>
+<td style="text-align:center">36个</td>
+</tr>
+<tr>
+<td style="text-align:center">轴承3x6x2.5mm</td>
+<td style="text-align:center">28个</td>
+</tr>
+<tr>
+<td style="text-align:center">M3x30mm螺栓</td>
+<td style="text-align:center">36个</td>
+</tr>
+<tr>
+<td style="text-align:center">7.4v锂电池</td>
+<td style="text-align:center">1个</td>
+</tr>
+<tr>
+<td style="text-align:center">TT电机</td>
+<td style="text-align:center">4个</td>
+</tr>
+<tr>
+<td style="text-align:center">HC06蓝牙模块</td>
+<td style="text-align:center">1个</td>
+</tr>
+<tr>
+<td style="text-align:center">创新林Xduino控制板</td>
+<td style="text-align:center">1个</td>
+</tr>
+<tr>
+<td style="text-align:center">TB6612FNG电机驱动</td>
+<td style="text-align:center">1个</td>
+</tr>
+<tr>
+<td style="text-align:center">A2x8自攻螺丝</td>
+<td style="text-align:center">8个</td>
+</tr>
+<tr>
+<td style="text-align:center">15mm热缩管</td>
+<td style="text-align:center">若干</td>
+</tr>
+<tr>
+<td style="text-align:center">小车底板</td>
+<td style="text-align:center">1个</td>
+</tr>
+<tr>
+<td style="text-align:center">TT电机固定夹</td>
+<td style="text-align:center">8个</td>
+</tr>
+</tbody>
+</table>
+<p>轮子是3D打印的，麦克纳姆轮有点贵所以自己做吧，哈哈！<br><img src="/media/Mecanum_Wheel/3dprint_wheel.jpg" alt="组装轮子"><br><img src="/media/Mecanum_Wheel/zuzhuang.jpg" alt="组装轮子"><br>56个小滚轮，每次7个打了8次，打印了快1天…..防打滑套热缩管套了半天，也可以不套看需要<br><img src="/media/Mecanum_Wheel/lunzi.jpg" alt="组装轮子"><br>轴承嵌在麦轮的小孔里，装不进去的话要打磨一下，4个麦轮用了28个轴承，28个M3螺栓，28个M3螺母；TT电机联轴器用两个A2x8自攻螺丝拧进去<br>组装好麦轮后，麦轮不是随便安装的，是分正反的，麦轮安装方法有几种，我比较喜欢这种“X”的安装方法(看下面图示)，斜杠代表小滚轮的方向</p>
+<p><img src="/media/Mecanum_Wheel/chesheng.png" alt="轮子组装方法"></p>
+<!--
+文件
+https://www.thingiverse.com/thing:5681
+教程
+http://www.madox.net/blog/2011/01/24/mecanum-wheel-rover-2 
+-->
+<p><img src="/media/Mecanum_Wheel/ok.jpg" alt="安装麦轮"><br>底版是激光切割的木板，每个TT电机用两个TT电机固定件，两个螺栓和螺母固定好，安装好麦轮是这样的↑<br><img src="/media/Mecanum_Wheel/anzhuan.jpg" alt="接线"></p>
+<p>我使用的创新林Xduino板子自带两路电机驱动，7，8与12，13引脚是定义到电机驱动的输出引脚，9，11引脚用于调速，把电机线接到自带的电机接线口刷上下面程序上电就可以转动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">long T;//设置转速变量</span><br><span class="line">void forword() &#123;</span><br><span class="line">  analogWrite(11,T);</span><br><span class="line">  digitalWrite(12,HIGH);</span><br><span class="line">  digitalWrite(13,LOW);</span><br><span class="line">  analogWrite(9,T);</span><br><span class="line">  digitalWrite(7,HIGH);</span><br><span class="line">  digitalWrite(8,LOW);</span><br><span class="line"> &#125;</span><br><span class="line"> void setup()&#123;</span><br><span class="line">  pinMode(12, OUTPUT);</span><br><span class="line">  pinMode(13, OUTPUT);</span><br><span class="line">  pinMode(7, OUTPUT);</span><br><span class="line">  pinMode(8, OUTPUT);  </span><br><span class="line">  pinMode(10, OUTPUT);  </span><br><span class="line">  digitalWrite(10,HIGH);</span><br><span class="line">  T = 0;</span><br><span class="line"> &#125;</span><br><span class="line"> void loop()</span><br><span class="line"> &#123;  </span><br><span class="line">  T = 200;  //设置转速</span><br><span class="line">  forword();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>小车一共是四路电机，所以我们还需要一个TB6612FNG电机驱动板<br><img src="/media/Mecanum_Wheel/jiexiantu.png" alt="接线图"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">引脚说明</th>
+<th style="text-align:center">引脚说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A控制信号输入——PWMA</td>
+<td style="text-align:center">VM ——电机驱动电压输入端（4.5V-15V）</td>
+</tr>
+<tr>
+<td style="text-align:center">A电机输入端2 ——AIN2</td>
+<td style="text-align:center">VCC ——逻辑电平输入端（2.7V-5.5V）</td>
+</tr>
+<tr>
+<td style="text-align:center">A电机输入端1 ——AIN1</td>
+<td style="text-align:center">GND —— 接地</td>
+</tr>
+<tr>
+<td style="text-align:center">正常工作/待机状态控制端——STBY</td>
+<td style="text-align:center">AO1 —— A电机输出端1</td>
+</tr>
+<tr>
+<td style="text-align:center">B电机输入端1——BIN1</td>
+<td style="text-align:center">AO2 —— A电机输出端2</td>
+</tr>
+<tr>
+<td style="text-align:center">B电机输入端2——BIN2</td>
+<td style="text-align:center">BO2 —— B电机输出端2</td>
+</tr>
+<tr>
+<td style="text-align:center">B控制信号输入端——PWMB</td>
+<td style="text-align:center">BO1 —— B电机输出端1</td>
+</tr>
+<tr>
+<td style="text-align:center">接地——GND</td>
+<td style="text-align:center">GND —— 接地</td>
+</tr>
+</tbody>
+</table>
+<p>AO1,AO2,BO1,BO2接到电机线，PWMA，PWMB分别接到板子上的A1，A2引脚，AIN1，AIN2，BIN1，BIN2分别接到板子2，3，4，5引脚，STBY置高接到5v上，最下面的两个GND可以不接</p>
+<p><img src="/media/Mecanum_Wheel/jiexian.jpg" alt="接线"><br>😄接好线就是这样的，接线有点乱，所以叫草稿版，资料也有点乱</p>
+<p>接下来是重点了！小车为什么能全向转动呢？是因为轮子特殊的机械结构，通过控制轮子不同的转向组合就可以实现全方位的转向，箭头表示轮子转动方向</p>
+<p><img src="/media/Mecanum_Wheel/前后.png" alt="前后"><br>全部轮子同时向前或向后转就可以实现前进和后退<br><img src="/media/Mecanum_Wheel/左右.png" alt="左右"><br>横向向左：左边轮子互相向里转，右边轮子互相向外转；横向向右：右边轮子互相向里转，左边轮子互相向外转<br><img src="/media/Mecanum_Wheel/左右上.png" alt="左右上"><br>左斜向上：左上和右下轮子不转，右上左下轮子同时向前转；右斜向上：右上和左下轮子不转，左上右下轮子同时向前转<br><img src="/media/Mecanum_Wheel/左右下.png" alt="左右下"><br>左斜向下：左上和右下轮子不转，右上左下轮子同时向后转；右斜向下：右上和左下轮子不转，左上右下轮子同时向后转<br><img src="/media/Mecanum_Wheel/正反转.png" alt="正反转"><br>正转：左边轮子同时向前转，右边轮子同时向后转；反转：左边轮子同时向后转，右边轮子同时向前转</p>
+<p>现在我们知道转向是如何实现的了，可以下载附件烧录程序调试，蓝牙模块接线仍然vcc，gnd，tx接rx，rx接tx</p>
+<p>在网上下载<a href="http://www.wandoujia.com/apps/com.shenyaocn.android.BlueSPP" target="_blank" rel="external">安卓蓝牙SPP软件</a>，连接上蓝牙模块<br><img src="/media/Mecanum_Wheel/BTSPP.png" alt="蓝牙SPP"><br>设置字符<br>停止：0，前进：1，后退：2.向左：3，向右：4，正转：5，反转：6，左上：7，右上：8，左下：9，右下：a<br>如果轮子转向不对的话，调代码里面的HIGH,LOW就可以改变轮子转向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">analogWrite(11,200);</span><br><span class="line">digitalWrite(12,LOW);</span><br><span class="line">digitalWrite(13,HIGH);</span><br><span class="line"></span><br><span class="line">analogWrite(9,200);</span><br><span class="line">digitalWrite(7,LOW);</span><br><span class="line">digitalWrite(8,LOW);</span><br><span class="line"></span><br><span class="line">analogWrite(A1,200);</span><br><span class="line">digitalWrite(2,LOW);</span><br><span class="line">digitalWrite(3,LOW);</span><br><span class="line"></span><br><span class="line">analogWrite(A2,200);</span><br><span class="line">digitalWrite(4,LOW);</span><br><span class="line">digitalWrite(5,HIGH);</span><br></pre></td></tr></table></figure></p>
+<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1>
       
     </div>
     
@@ -311,13 +454,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/03/27/usefulcode/">Arduino一些有用的代码</a></p>
+        <p><span>本文标题:</span><a href="/2017/08/25/MecanumWheelCar/">草稿版麦克纳姆轮小车</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">好奇吖斌</a></p>
-        <p><span>发布时间:</span>2017-03-27, 21:46:59</p>
-        <p><span>最后更新:</span>2017-03-28, 14:39:29</p>
+        <p><span>发布时间:</span>2017-08-25, 17:17:25</p>
+        <p><span>最后更新:</span>2017-08-25, 17:17:33</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/03/27/usefulcode/" title="Arduino一些有用的代码">http://www.haoqiabin.cn/2017/03/27/usefulcode/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.haoqiabin.cn/2017/03/27/usefulcode/　　作者: 好奇吖斌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/08/25/MecanumWheelCar/" title="草稿版麦克纳姆轮小车">http://www.haoqiabin.cn/2017/08/25/MecanumWheelCar/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.haoqiabin.cn/2017/08/25/MecanumWheelCar/　　作者: 好奇吖斌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -329,16 +472,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/04/16/pet-toy/">
-                    宠物互动--逗宠萌物🐱(程序与轮子有更新)
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/11/25/led-robot/">
-                    点阵LED卖萌表情包(*_*)+假唱机器人
+                <a href="/2017/08/07/raspberry-oled/">
+                    解决树莓派驱动OLED(非SSD1306)花屏问题
                 </a>
             </div>
         
@@ -349,7 +486,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#零件清单："><span class="toc-number">1.</span> <span class="toc-text">零件清单：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#附件"><span class="toc-number">2.</span> <span class="toc-text">附件</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -406,7 +543,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Arduino一些有用的代码　| 探索的好奇心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"草稿版麦克纳姆轮小车　| 探索的好奇心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -426,15 +563,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/04/16/pet-toy/" title="上一篇: 宠物互动--逗宠萌物🐱(程序与轮子有更新)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/11/25/led-robot/" title="下一篇: 点阵LED卖萌表情包(*_*)+假唱机器人">
+            <a href="/2017/08/07/raspberry-oled/" title="下一篇: 解决树莓派驱动OLED(非SSD1306)花屏问题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
