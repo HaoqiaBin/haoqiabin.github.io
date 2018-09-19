@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/zh-cn" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>迷你格斗机器人--铁角龙建造日志 | 探索的好奇心</title>
+  <meta name="description" content="自2017年铁甲雄心格斗机器人节目播出以来国内格斗机器人异常火爆，小时候就在电视上看过机器争霸这种机器人打架的节目，也比较着迷，DF创客社区于2018年开始举办第一季的MechBattle迷你格斗机器人比赛于是我也进了这个格斗机器人的大坑，上半年一直在关注格斗机器人，学习如何造机，第一季我做的3D打印版的滚筒型机器人烂尾了，之前是2KG级别的，现在新一季比赛是1.5KG所以我重新设计了一台采用金属">
+<meta property="og:type" content="article">
+<meta property="og:title" content="迷你格斗机器人--铁角龙建造日志">
+<meta property="og:url" content="http://www.haoqiabin.cn/2018/09/19/CombatRobot/index.html">
+<meta property="og:site_name" content="探索的好奇心">
+<meta property="og:description" content="自2017年铁甲雄心格斗机器人节目播出以来国内格斗机器人异常火爆，小时候就在电视上看过机器争霸这种机器人打架的节目，也比较着迷，DF创客社区于2018年开始举办第一季的MechBattle迷你格斗机器人比赛于是我也进了这个格斗机器人的大坑，上半年一直在关注格斗机器人，学习如何造机，第一季我做的3D打印版的滚筒型机器人烂尾了，之前是2KG级别的，现在新一季比赛是1.5KG所以我重新设计了一台采用金属">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/myrobot.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/logo.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/blueprint.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/design.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/zhijia.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/dxf.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/biaozhu.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/jijia.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ban.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/all.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/Part_list.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/weapon1.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/zhixin.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/weapon2.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/weapon3.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/weapon4.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/2208.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/prepart.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC1.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC2.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC3.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC4.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC5.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/write_esc.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC6.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC7.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC8.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC9.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/ESC10.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/tools.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/zhuzhuan.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/24to16.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/16to8.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/vs16.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/orange.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/8to4.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/CombatRobot/vs8.jpg">
+<meta property="og:updated_time" content="2018-09-19T03:43:20.566Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="迷你格斗机器人--铁角龙建造日志">
+<meta name="twitter:description" content="自2017年铁甲雄心格斗机器人节目播出以来国内格斗机器人异常火爆，小时候就在电视上看过机器争霸这种机器人打架的节目，也比较着迷，DF创客社区于2018年开始举办第一季的MechBattle迷你格斗机器人比赛于是我也进了这个格斗机器人的大坑，上半年一直在关注格斗机器人，学习如何造机，第一季我做的3D打印版的滚筒型机器人烂尾了，之前是2KG级别的，现在新一季比赛是1.5KG所以我重新设计了一台采用金属">
+<meta name="twitter:image" content="http://www.haoqiabin.cn/media/CombatRobot/myrobot.png">
+  
+    <link rel="alternative" href="/atom.xml" title="探索的好奇心" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+  
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js"
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [false];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Avatar.jpeg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">好奇吖斌</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">爱动手做小东西-热爱开源分享交流</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:bin57@qq.com" title="Email"></a>
+                            
+                                <a class="fa 优酷" target="_blank" href="http://i.youku.com/haoqiabin" title="优酷"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/WeChat" title="微信"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/HaoqiaBin" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MakerFaire/">MakerFaire</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PS4/">PS4</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stino/">Stino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无人机/">无人机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器人/">机器人</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://SexyCyborg.imgur.com">SexyCyborg</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jingwen-zhu.com">朱静文</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mikibx.com">MiKi</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.pengzhihui.xyz">稚晖的个人站</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.yoyojacky.com">骑驴玩儿漂移</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiangnandao.com">抹茶</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://lingshunlab.com">凌顺</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">喜欢折腾，爱好科技制作的好奇吖斌！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+    <div class="overlay">
+        <div class="slider-trigger"></div>
+        <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">好奇吖斌</a></h1>
+    </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Avatar.jpeg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">好奇吖斌</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">爱动手做小东西-热爱开源分享交流</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <ul class="social">
+                    
+                        <a class="fa Email" target="_blank" href="mailto:bin57@qq.com" title="Email"></a>
+                    
+                        <a class="fa 优酷" target="_blank" href="http://i.youku.com/haoqiabin" title="优酷"></a>
+                    
+                        <a class="fa 微信" target="_blank" href="/WeChat" title="微信"></a>
+                    
+                        <a class="fa GitHub" target="_blank" href="https://github.com/HaoqiaBin" title="GitHub"></a>
+                    
+                </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-CombatRobot" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/09/19/CombatRobot/" class="article-date">
+      <time datetime="2018-09-19T07:07:09.000Z" itemprop="datePublished">2018-09-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      迷你格斗机器人--铁角龙建造日志
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>自2017年铁甲雄心格斗机器人节目播出以来国内格斗机器人异常火爆，小时候就在电视上看过机器争霸这种机器人打架的节目，也比较着迷，DF创客社区于2018年开始举办第一季的MechBattle迷你格斗机器人比赛于是我也进了这个格斗机器人的大坑，上半年一直在关注格斗机器人，学习如何造机，第一季我做的3D打印版的滚筒型机器人烂尾了，之前是2KG级别的，现在新一季比赛是1.5KG所以我重新设计了一台采用金属的迷你格斗机器人，造格斗机器人不是一台遥控车加一个武器那么简单的，做出一台优秀的格斗机器人还是需要学习很多知识的，而且机器人优秀了还不够，还需要好的操作，打比赛需要灵活的操作，按我的理解总结来说一台优秀的格斗机器人，攻击力强防御好，维修简单，还需要一个灵魂操作手。我把我做机器人学习到的东西分享出来和大家交流，也希望经过这第一次造机后获得了提升之后做出来的机器会更优秀！</p>
+<p><strong>1.5kg转鼓迷你格斗机器人-铁角龙</strong></p>
+<center><img src="/media/CombatRobot/myrobot.png" alt="CombatRobot"></center><br><strong>战队logo–文武工厂</strong><br><center><img src="/media/CombatRobot/logo.png" alt="CombatRobot"></center><br><a id="more"></a><br><strong>设计图</strong><br><center><img src="/media/CombatRobot/blueprint.png" alt="CombatRobot"></center>
+
+<p>首先说一下机器人大概状况：整机采用全无刷电机，机身大小尺寸在20cm*20cm左右，高6cm左右。动力电使用格氏3S的850mah75C锂电池，武器部分采用钛合金做的单牙下勾拳转鼓，重量较轻金属强度还不错，武器电机是880kv的朗宇2216无刷电机圆皮带传动，40A迈克电调，但是效率不是很高，甲虫级用皮带传动做转鼓的机器貌似不多，下次做的话会做电机内置的；行走采用两个1100kv的xxd2208后出轴电机，35A穿越机电调，配1：15的咸鱼减速箱，得科55mm硅胶轮子，3S锂电转速大概900多点，计算公式大概是转速=电机kv数x锂电电压数÷减速比，实测下来这个速度还是可以控制，不算得飞快500转的话我觉得会慢吞吞，下次可以尝试1400kv的；机架用的是6mm厚6061铝合金，金属有点软，受力不容易断容易弯，下板2mm6061铝合金，上板的是1mm6061铝合金；遥控器用的是乐迪AT9s，接收机是R6DS，算是中等遥控器，格斗机器人用不到那么多通道，这个控是以前玩穿越机的时候买的，买个富斯i6或MC6就可以了；打完比赛下来还算稳定，没出现烧电调，电机的情况。</p>
+<p>实践出真理，参加过比赛后发现弱点如下：</p>
+<ul>
+<li>1.武器攻击力不是很强，圆皮带传动效率不高，武器打到东西就容易打滑减速</li>
+<li>2.行走不算稳，机器重心靠前，轮子放后了比较容易打滑</li>
+<li>3.防御力差，护甲用了PLA3D打印件，遇到横向旋转类的对手就会非常容易被打掉护甲</li>
+</ul>
+<p>下面说一下设计的一些基础吧，给新手入门的小技巧</p>
+<center><br><img src="/media/CombatRobot/design.png" alt="CombatRobot"><br>我用的图画软件是Solidworks，这个软件专门用来设计机械类的东西，十分容易上手，网上也有教程，推荐学习使用，机器零件画完后可以添加材料属性，查看大概重量，这里很重要重量是有限制的，不能超重，镂空减重看这里了，1.5kg级别支架一般使用6061或7075的铝合金，重量较轻点，6061的金属较软而7075的比较硬一点，看自己的需要选取，设计的时候也需要知道加工工艺，例如是用激光切割还是CNC，铣床之类的，不同的加工工艺设计起来会有点不一样<br><br><img src="/media/CombatRobot/zhijia.jpg" alt="CombatRobot"><br>镂空后的支架实测重量与上面软件算出来的差别不大<br><br><img src="/media/CombatRobot/dxf.png" alt="CombatRobot"><br>加工出图，一般激光切割的文件是dxf格式，Solidworks软件可以出工程图，激光切割文件和标注非常方便<br><img src="/media/CombatRobot/biaozhu.png" alt="CombatRobot"><br>这个是标注图，一般会标上一些尺寸，公差说明，孔定位，注意事项等，加工的时候发给加工方<br><br><img src="/media/CombatRobot/jijia.jpg" alt="CombatRobot"><br>整机机架，激光切割的，听人说激光切割厚的铝合金精度大概在+-0.3到+-0.4左右，实际到手的零件精度还是不错的，镂空的形状多用三角形，三角形具有稳定性，受力会好点<br><img src="/media/CombatRobot/ban.jpg" alt="CombatRobot"><br>上下板和电机座，也是激光切割的，激光切割有一定误差，我画M3螺丝孔画到3.4mm，通孔画大一点比较好<br><br><img src="/media/CombatRobot/all.jpg" alt="CombatRobot"><br><img src="/media/CombatRobot/Part_list.png" alt="CombatRobot"><br>设计机器人的时候应该买个称子和列一个清单，称子买5kg量程比较好，因为我买的2kg称子组装完后整机测不是很准，清单写上零件名称、数量、重量这些，看着明白，重量也方便统计，实际做出来的重量也是1.4kg多一点没有超重，避免到时候做出来超重再进行减重，小级别机器减重是个很头疼的事情。<br><br><img src="/media/CombatRobot/weapon1.jpg" alt="CombatRobot"><br><img src="/media/CombatRobot/zhixin.png" alt="CombatRobot"><br>转鼓武器的材料是钛合金，钛合金具有强度高而密度又小，机械性能好，韧性和抗蚀性能也很好，线切割做精度比较好，做的时候倒霉遇到一个想辞职的派件员，我是寄到朋友那里让他帮忙拿去加工的，结果那派件员不知道派件到哪里了，打电话不接发短信不回，最后快递赔付我了卖家重新发货，单牙转鼓主要是动平衡的处理，要在画图软件里找到质心，质心就是中心，在中心那里开孔放轴，就是图上面中间那个圆孔了<br><img src="/media/CombatRobot/weapon2.jpg" alt="CombatRobot"><br>中间的孔需要用打磨工具把线切割纹打磨至光滑，可以和附近镂空的切割纹对比一下，切割纹会有一个凸起的线，买一套小的打磨锉刀工具进行打磨就好了不然里面套轴承是套不进去，我用的是内径8mm的双向滚针轴承，打磨好后用木棒把轴承慢慢敲进去，用铁锤子容易敲坏，所以用木棒垫着<br><img src="/media/CombatRobot/weapon3.jpg" alt="CombatRobot"><br>转鼓两边放好轴承后在鼓需要加皮带轮的一边先打磨圆角后在用木棒把皮带轮敲进去<br><img src="/media/CombatRobot/weapon4.jpg" alt="CombatRobot"><br>装好后大概这样，转鼓加上轴承和皮带轮和软件算出来的重量差别不大在340g左右<br><br><img src="/media/CombatRobot/2208.jpg" alt="CombatRobot"><br>之前的武器电机使用了一个杂牌的2208的无刷电机，我把武器电调的散热铝板去掉了，后来组装好发现电机比较小并不能把武器带起来，转鼓武器重340g带起来了也很容易发烫，所以2208要换个大点的，后来找了一个朗宇2216后出轴的电机，去到比赛技术检测前那里换的，还好武器终于带起来了，那个电调也是个不出名的品牌40A，用下来也没什么问题，但是最好还是建议上高A数一点的电调，50A或60A比较稳不容易烧<br></center>
+
+<center><br><img src="/media/CombatRobot/prepart.jpg" alt="CombatRobot"><br>行走部分，这里我用的减速箱是咸鱼战队的咸鱼减速箱，也可以选用马步崎行星减速箱，一般会用到二级减速，xxd无刷电机需要后出轴的，买回来的大部分不是后出轴需要自己把轴敲出来再敲回去改成后出轴的，1100kv到1400kv比较合适，无刷电机做行走需要无刷电调，搭配穿越机电调是个不错的选择，有两个明显的优点体积小，重量轻，非常适合做迷你的格斗机器人，机器能做得紧凑，重量省下来可以用来做其它用途我们需要购买可以刷开源BLHeli固件的那种电调，买其它的不能自己去更改参数，电调买回来后一般默认是单向的，因为电调是为多旋翼设计的只需要用到单向穿越机电调改双向参数需要下载一个软件叫“BLHeliSuite”，改参数还需要一个穿越机飞控或一个Arduino UNO或Arduino Nano,我手里有好几个Nano就采用Arduino Nano的方法<br><br><img src="/media/CombatRobot/ESC1.png" alt="CombatRobot"><br>(一)改之前需要给Nano刷一个程序,打开软件界面如上图<br><img src="/media/CombatRobot/ESC2.png" alt="CombatRobot"><br>(二)把Nano用数据线连接到电脑上，1点击make interfaces，2选择你的Nano的串口端口，3选择Arduino Nano板子型号.4选择Arduino 4way-interfaces<br><img src="/media/CombatRobot/ESC3.png" alt="CombatRobot"><br>(三)弹出的对话框点确定就好<br><img src="/media/CombatRobot/ESC4.png" alt="CombatRobot"><br>(四)这里选择带“MULTI”字样的，这是多旋翼用的调参程序，穿越机电调就是多旋翼的<br><img src="/media/CombatRobot/ESC5.png" alt="CombatRobot"><br>(五)刷好程序到Nano后有如图弹窗就说明刷好程序了<br><img src="/media/CombatRobot/write_esc.jpg" alt="CombatRobot"><br>(六)此时可以把电调上锂电，电调GND信号线接到Nano的GND上，电调输出信号线接到Nano随便一个IO口上，对，就是随便接<br><img src="/media/CombatRobot/ESC6.png" alt="CombatRobot"><br>(七)点ESC setup回到设置界面<br><img src="/media/CombatRobot/ESC7.png" alt="CombatRobot"><br>(八)选择菜单上面BLHeli 32 Interface的BLHeli 32 Bootloader(4way-if)<br><img src="/media/CombatRobot/ESC8.png" alt="CombatRobot"><br>(九)点击Connect连接电调<br><img src="/media/CombatRobot/ESC9.png" alt="CombatRobot"><br>(十)点击Check按钮，等一会就会检测到连接的电调在Single ESC处显示，再点击可以查看详细信息<br><img src="/media/CombatRobot/ESC10.png" alt="CombatRobot"><br>(十一)1在Motor Dirction选项滑动到Bidirectional，2点击Write Setup写入修改后的参数就OK了<br></center>
+
+<p><center><img src="/media/CombatRobot/tools.jpg" alt="CombatRobot"></center><br>一些常用工具参考，工欲善其事，必先利其器，好工具用起顺手装机修机都会快，我用的螺丝刀是航模螺丝刀，S2工具钢批头不易滑批头，六合一批头分别是一字十字和4种规格的六角螺丝，铝合金手柄比较轻，携带方便很好使；10合一锉刀，机器人零件或多或少会存在一些误差，这时候可以用锉刀进行打磨；一把斜口钳，剪东西用的，电线啊，扎带，铁皮也能剪；当然还有其它的一些常用工具，电烙铁也是要用到的，焊接电路必须工具，最好是买可调温度的焊台，那些便宜的一个不能调温度的不好用，攻丝用的丝推，我没用过，不过我在交流群里看到挺多人自己买来弄螺丝孔的，也算是个常用的工具。</p>
+<p><center><img src="/media/CombatRobot/zhuzhuan.jpg" alt="CombatRobot"></center><br>零件基本准备好就可以进行装机了，建议使用12.9级圆头螺丝，价格便宜强度够，不要用铝合金螺丝又贵又软，之前听说铝合金螺丝轻买了一些回来试，结果就是铝合金金属强度太软，拧了没几下螺丝头就很容易滑牙了，铝合金螺丝减重不是个好方法，装好后记得要加一个安全开关，看图片上我用xt30的插头做了个叫做Link的开关，铜螺丝比较难焊所以做个Link，这个拔掉就是断开电源了，比赛的技术检测会进行检查的，没有安全开关会不通过，必须加上，机器人出现失控什么的可以快速断开电源；还有个问题就是那些电调和接收机接线的地方一定要记得上固化硅胶或者绝缘胶布热缩管之类绝缘的东西，机身是铝合金的，格斗机器人打起来会出现强烈振动，那些裸露的接线焊点碰到金属非常容易发生短路现象，这样不但会烧掉电调还会输掉比赛，细节做好不要大意。</p>
+<p>混控设置这里不说，每个人的遥控器不一样，具体方法请查自己遥控器的教程，只是说说设置调试的思路，一般一个摇杆有两个通道可以控制机器的前进，后退，左转和右转，前后摇为一个通道，左右摇为另一通道，具体哪两个通道请查看自己的遥控器，行走电调的信号线就接在接收机这两个通道上，当电装装好，未设置混控前，拨动摇杆前后，左右查看电机转动情况，一般一个通道控制一个电机，以调试前后为例，摇杆前后推，观察电机是否也跟着前后转，如果不是请把它先调好，然后设置混控，两个电机信号会联在一起，向前推摇杆另外那个电机方向反着转的话就要调遥控信号把那个反着转的调到两个电机推摇杆时候方向相同，同理，左右转的话就是两个电机相反方向转，左转是左电机后转，右电机前转，右转就是左电机前转，右电机后转。</p>
+<h1 id="MechBattle第二季上海CJ站比赛情况"><a href="#MechBattle第二季上海CJ站比赛情况" class="headerlink" title="MechBattle第二季上海CJ站比赛情况"></a>MechBattle第二季上海CJ站比赛情况</h1><h2 id="24进16比赛"><a href="#24进16比赛" class="headerlink" title="24进16比赛"></a><center>24进16比赛</center></h2><p><center><img src="/media/CombatRobot/24to16.jpg" alt="CombatRobot"></center><br>第一场一开始打才能未来的大横转，凉凉的，这个大横传结构十分简单机身采用方管焊接起来，重量较轻可以把体积做大，这样比较稳，轮子躲在两侧方管中间，防御也很不错，和他打一架我防御的弱点马上暴露出来了，3D打印件直接被打掉，当然他的机器武器也转不了，打我的机器的时候反作用力太大把自己的电机打歪了，卡住转不了，最后是对方机器不动我的机器武器和行走都能动，但是当时裁判说对手胜，在场的人让我去申诉，最后的结果是说当双方打的时候，我的机器首先出现行动不了的现象，所以最后我还是输了，进入复活赛，幸运的是复活赛和我对打的选手弃赛了，所以我还是复活过来可以继续打下去</p>
+<h2 id="16进8比赛"><a href="#16进8比赛" class="headerlink" title="16进8比赛"></a><center>16进8比赛</center></h2><p><center><img src="/media/CombatRobot/16to8.jpg" alt="CombatRobot"></center></p>
+<p><center><img src="/media/CombatRobot/vs16.jpg" alt="CombatRobot"></center></p>
+<p><center><img src="/media/CombatRobot/orange.jpg" alt="CombatRobot"></center></p>
+<p><iframe width="100%" height="680" src="//player.bilibili.com/player.html?aid=29417935&cid=51140790&page=7" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><br>16进8这场和比赛唯一的一位女选手对打，和我一样是新手，但是机器不是女选手做的，她说是南京站的机器，我觉得女孩子玩机器人还是非常非常酷的，她的机器武器做得不是很好，攻击范围太小了，几乎打不到我的机器，不过她把自转机器防御还是不错的，比赛上我把她的机器打翻了然后KO掉她了，后来她送了她战队的logo佩章给我，谢谢啦</p>
+<h2 id="8进4比赛"><a href="#8进4比赛" class="headerlink" title="8进4比赛"></a><center>8进4比赛</center></h2><p><center><img src="/media/CombatRobot/8to4.jpg" alt="CombatRobot"></center></p>
+<p><center><img src="/media/CombatRobot/vs8.jpg" alt="CombatRobot"></center></p>
+<p><iframe width="100%" height="680" src="//player.bilibili.com/player.html?aid=29417935&cid=51141284&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><br>最后一场8进4与角斗士大佬战队对打，进到8强出了我意料我就想着最多打两场就没得玩了，现在是第三场，当时就是行走走不了，之前打了两场其实已经有点损坏了，最后走不动挨揍输了。</p>
+<p>电调调参软件和机器人模型下载地址：<br>链接：<a href="https://pan.baidu.com/s/1YpietEcBcxHUHvrwsRgVmQ" target="_blank" rel="external">https://pan.baidu.com/s/1YpietEcBcxHUHvrwsRgVmQ</a> 密码：b8jq</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/09/19/CombatRobot/">迷你格斗机器人--铁角龙建造日志</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">好奇吖斌</a></p>
+        <p><span>发布时间:</span>2018-09-19, 15:07:09</p>
+        <p><span>最后更新:</span>2018-09-19, 11:43:20</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/09/19/CombatRobot/" title="迷你格斗机器人--铁角龙建造日志">http://www.haoqiabin.cn/2018/09/19/CombatRobot/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.haoqiabin.cn/2018/09/19/CombatRobot/　　作者: 好奇吖斌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/20/musicbox/">
+                    卖萌ớ ₃ờ蓝牙音箱表情包
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MechBattle第二季上海CJ站比赛情况"><span class="toc-number">1.</span> <span class="toc-text">MechBattle第二季上海CJ站比赛情况</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#24进16比赛"><span class="toc-number">1.1.</span> <span class="toc-text">24进16比赛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16进8比赛"><span class="toc-number">1.2.</span> <span class="toc-text">16进8比赛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8进4比赛"><span class="toc-number">1.3.</span> <span class="toc-text">8进4比赛</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"迷你格斗机器人--铁角龙建造日志　| 探索的好奇心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/20/musicbox/" title="下一篇: 卖萌ớ ₃ờ蓝牙音箱表情包">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/09/19/CombatRobot/">迷你格斗机器人--铁角龙建造日志</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/20/musicbox/">卖萌ớ ₃ờ蓝牙音箱表情包</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/04/BTPS4/">教程向--PS4手柄🎮做Arduino的控制器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/projector/">3D打印球型投影小夜灯💡</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/MecanumWheelCar/">草稿版麦克纳姆轮小车</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/07/raspberry-oled/">解决树莓派驱动OLED(非SSD1306)花屏问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/04/gizwits_learn/">机智云学习笔记✏️</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/23/MakerFaireXiAn2017/">西安制汇节2017(未完成更新完，最近忙)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/RoboardPro/">Arduino UNO增强版Roboard Pro测试与使用说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/16/pet-toy/">宠物互动--逗宠萌物🐱(程序与轮子有更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/27/usefulcode/">Arduino一些有用的代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/25/led-robot/">点阵LED卖萌表情包(*_*)+假唱机器人</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/drone/">组装穿越机</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/MakerFaireShenZhen2016/">深圳制汇节2016</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/10/teacherday/">红棉创客8小时造物工坊与广州图书馆首届创客大赛启动</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/sublime-stino/">替代Arduino IDE的Sublime Text的插件---Stino</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/29/MakerEDU/">广州创客教育展</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/testing/">测试页面-高中珍藏照片</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/15/hello-world/">Hello World!</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 好奇吖斌
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
