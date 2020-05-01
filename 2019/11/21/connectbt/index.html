@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/zh-cn" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title>双蓝牙模块的配对连接设置教程 | 探索的好奇心</title>
+  <meta name="description" content="好久没有更新博客了，把以前做的一个需要用到两个蓝牙模块配对的小项目参考网上做的教程重新整理的配对设置教程发上来
+实现蓝牙模块的互相配对需要一个HC05主模块和一个HC06从模块HC05与HC06蓝牙模块长得很像，怎么区分看下面：
+HC05模块上有个按键HC06模块上没有按键">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双蓝牙模块的配对连接设置教程">
+<meta property="og:url" content="http://www.haoqiabin.cn/2019/11/21/connectbt/index.html">
+<meta property="og:site_name" content="探索的好奇心">
+<meta property="og:description" content="好久没有更新博客了，把以前做的一个需要用到两个蓝牙模块配对的小项目参考网上做的教程重新整理的配对设置教程发上来
+实现蓝牙模块的互相配对需要一个HC05主模块和一个HC06从模块HC05与HC06蓝牙模块长得很像，怎么区分看下面：
+HC05模块上有个按键HC06模块上没有按键">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/connectbt/hc05.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/connectbt/hc06.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/connectbt/ttl.jpg">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/connectbt/zhushou.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/connectbt/setHC06.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/connectbt/HC06AT.png">
+<meta property="og:image" content="http://www.haoqiabin.cn/media/connectbt/setHC05.png">
+<meta property="og:updated_time" content="2020-02-03T18:41:53.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="双蓝牙模块的配对连接设置教程">
+<meta name="twitter:description" content="好久没有更新博客了，把以前做的一个需要用到两个蓝牙模块配对的小项目参考网上做的教程重新整理的配对设置教程发上来
+实现蓝牙模块的互相配对需要一个HC05主模块和一个HC06从模块HC05与HC06蓝牙模块长得很像，怎么区分看下面：
+HC05模块上有个按键HC06模块上没有按键">
+<meta name="twitter:image" content="http://www.haoqiabin.cn/media/connectbt/hc05.png">
+  
+    <link rel="alternative" href="/atom.xml" title="探索的好奇心" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+  
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/orange/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js"
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.jquery_ui = [false];
+      </script>
+  
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/Avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">好奇吖斌</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">爱动手做小东西-热爱开源分享交流</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:bin57@qq.com" title="Email"></a>
+                            
+                                <a class="fa 优酷" target="_blank" href="http://i.youku.com/haoqiabin" title="优酷"></a>
+                            
+                                <a class="fa 微信" target="_blank" href="/WeChat" title="微信"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/HaoqiaBin" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MakerFaire/">MakerFaire</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PS4/">PS4</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Stino/">Stino</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/创客/">创客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无人机/">无人机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器人/">机器人</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://SexyCyborg.imgur.com">SexyCyborg</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jingwen-zhu.com">朱静文</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.mikibx.com">MiKi</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.pengzhihui.xyz">稚晖的个人站</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.yoyojacky.com">骑驴玩儿漂移</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.xiangnandao.com">抹茶</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://lingshunlab.com">凌顺</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.caiyuli.com">蔡雨利</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://xiaohudie.net/">小蝴蝶</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">喜欢折腾，爱好科技制作的好奇吖斌！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+    <div class="overlay">
+        <div class="slider-trigger"></div>
+        <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">好奇吖斌</a></h1>
+    </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/Avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">好奇吖斌</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">爱动手做小东西-热爱开源分享交流</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <ul class="social">
+                    
+                        <a class="fa Email" target="_blank" href="mailto:bin57@qq.com" title="Email"></a>
+                    
+                        <a class="fa 优酷" target="_blank" href="http://i.youku.com/haoqiabin" title="优酷"></a>
+                    
+                        <a class="fa 微信" target="_blank" href="/WeChat" title="微信"></a>
+                    
+                        <a class="fa GitHub" target="_blank" href="https://github.com/HaoqiaBin" title="GitHub"></a>
+                    
+                </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-connectbt" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/21/connectbt/" class="article-date">
+      <time datetime="2019-11-20T16:55:44.000Z" itemprop="datePublished">2019-11-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      双蓝牙模块的配对连接设置教程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>好久没有更新博客了，把以前做的一个需要用到两个蓝牙模块配对的小项目参考网上做的教程重新整理的配对设置教程发上来</p>
+<p>实现蓝牙模块的互相配对需要一个HC05主模块和一个HC06从模块<br>HC05与HC06蓝牙模块长得很像，怎么区分看下面：</p>
+<center><img src="/media/connectbt/hc05.png" alt="hc05"><br>HC05模块上有个按键</center><br><center><img src="/media/connectbt/hc06.png" alt="hc06"><br>HC06模块上没有按键</center><br><a id="more"></a><br>设置蓝牙模块还需要一个USB转TTL的工具<br><center><img src="/media/connectbt/ttl.jpg" alt="hc06"></center><br>蓝牙模块与USB转TTL接线<br>RXD &lt;———&gt; TXD<br>TXD &lt;———&gt; RXD<br>VCC &lt;———&gt; 5V<br>GND &lt;———&gt; GND<br>我们需要一个串口助手软件<br><center><img src="/media/connectbt/zhushou.png" alt="zhushou"></center>
+
+<h1 id="步骤一：HC06蓝牙模块设置"><a href="#步骤一：HC06蓝牙模块设置" class="headerlink" title="步骤一：HC06蓝牙模块设置"></a><strong>步骤一：HC06蓝牙模块设置</strong></h1><ul>
+<li>1.设置波特率为9600</li>
+<li>2.打开串口</li>
+<li>3.发送区输入AT</li>
+<li>4.点击发送</li>
+<li>5.接收区看到OK即说明进入AT模式了<center><img src="/media/connectbt/setHC06.png" alt="setHC06"></center>
+
+</li>
+</ul>
+<h3 id="HC06波特率更改"><a href="#HC06波特率更改" class="headerlink" title="HC06波特率更改"></a>HC06波特率更改</h3><p>发送：AT+BAUD4 返回：OK9600 HC06是不可以查询它的波特率<br>波特率标号对应表：<br>1———1200<br>2———2400<br>3———4800<br>4———9600(默认)<br>5———19200<br>6———38400<br>7———57600<br>8———115200<br>9———230400<br>A———460800<br>B———921600<br>C———1382400</p>
+<h3 id="HC06的密码更改"><a href="#HC06的密码更改" class="headerlink" title="HC06的密码更改"></a>HC06的密码更改</h3><p>发送：AT+PIN1234 ,这将密码改成1234，对于HC06，你是不可以查询它的密码</p>
+<h3 id="HC06改蓝牙名称"><a href="#HC06改蓝牙名称" class="headerlink" title="HC06改蓝牙名称"></a>HC06改蓝牙名称</h3><p>发送：AT+NAMEname 返回：OKname</p>
+<center><img src="/media/connectbt/HC06AT.png" alt="HC06AT"></center>
+
+<h1 id="步骤二：HC05蓝牙模块的设置"><a href="#步骤二：HC05蓝牙模块的设置" class="headerlink" title="步骤二：HC05蓝牙模块的设置"></a><strong>步骤二：HC05蓝牙模块的设置</strong></h1><center><img src="/media/connectbt/setHC05.png" alt="setHC05"></center>
+
+<p>HC05与USB转TTL接好线后，按着HC05蓝牙模块上的按键，再把USB转TTL接上电脑的USB接口，打开串口助手软件</p>
+<ul>
+<li>1.设置波特率为38400</li>
+<li>2.打开串口</li>
+<li>3.发送区输入AT然后加个回车，不然发送没效果</li>
+<li>4.点击发送</li>
+<li>5.在接收区里返回OK即HC05蓝牙模块进入了AT命令模式<h3 id="a-更改HC05蓝牙模块密码"><a href="#a-更改HC05蓝牙模块密码" class="headerlink" title="a.更改HC05蓝牙模块密码"></a>a.更改HC05蓝牙模块密码</h3>AT+PSWD=1234             蓝牙配对密码为1234<br>AT+PSWD？             查询蓝牙模块密码<h3 id="b-更改HC05蓝牙模块波特率"><a href="#b-更改HC05蓝牙模块波特率" class="headerlink" title="b.更改HC05蓝牙模块波特率"></a>b.更改HC05蓝牙模块波特率</h3>AT+UART=9600，0，0     蓝牙通信串口波特率为9600，停止位1位，无校验位<br>AT+UART？             查询蓝牙模块波特率<h3 id="c-更改HC05蓝牙模块名称"><a href="#c-更改HC05蓝牙模块名称" class="headerlink" title="c.更改HC05蓝牙模块名称"></a>c.更改HC05蓝牙模块名称</h3>AT+NAME=HC05        蓝牙模块名称改为HC05<br>AT+NAME？            查询蓝牙模块名称</li>
+</ul>
+<h1 id="步骤三：配对与连接"><a href="#步骤三：配对与连接" class="headerlink" title="步骤三：配对与连接"></a><strong>步骤三：配对与连接</strong></h1><ul>
+<li>1.确保HC05和HC06有相同的密码</li>
+<li>2.确保HC05和HC06有相同的波特率</li>
+<li>3确保HC05进入了AT模式，然后在串口调试助手中输入以下指令<br>AT+RMAAD //清除所有已配对设备,你会收到”OK”的回复<br>AT+ROLE=1  //设置 HC05为主模块, 你会收到”OK”的回复<br>AT+CMODE=0  //允许 HC05 连接任何设备, 你会收到”OK”的回复<br>AT+INQM=0,5,9  //设置9秒内能搜索设备最多为5个, 你会收到”OK”的回复<br>AT+INIT  //启动串口配置文件,你会收到”OK”的回复  //这个指令需要HC05的EN 管脚置高电平. 如果没有, 你不会收到任何回复<br>AT+INQ  //搜索其他蓝牙设备, HC06, 你会收到类似如下的回复 ‘’+INQ:2016:12:215598,1F00,7FFF’’. 这返回了三个值, 第一个是 HC06的地址，这是我们需要的, 第二个是设备的种类 ， 第三个是信号强度。这个指令只有在 HC05为主模块并且在 AT+INIT 指令之后才会生效。</li>
+<li>4.使用指令<code>&quot;AT+PAIR=&lt;address&gt;,&lt;timeout&gt;&quot;</code><br>  举例说明, 如果蓝牙地址是 2016:12:215598, 我需要输入 “AT+PAIR=2016,12,215598,9”. 在这个指令中， 9 代表HC05 会在9秒钟和HC06配对.如果配对失败, 你会收到一个error的回复，如果配对成功，你会收到”OK”的回复</li>
+<li>5.使用指令” <code>&quot;AT+BIND=&lt;address&gt;&quot;</code><br>  举例说明,如果蓝牙地址是2016:12:215598, 我需要输入 “AT+BIND=2016,12,215598”</li>
+<li>6.输入指令”AT+CMODE=1”  设置 HC05仅和已配对设备进行连接</li>
+<li>7.输入指令<code>&quot;AT+LINK=&lt;address&gt;&quot;</code> 连接HC06蓝牙模块<br>  举例说明, 我需要输入 “AT+LINK=2016,12,215598”.<br>如果所有的步骤都完成了，最后你会收到”OK”的回复</li>
+</ul>
+<h1 id="步骤四：验证"><a href="#步骤四：验证" class="headerlink" title="步骤四：验证"></a><strong>步骤四：验证</strong></h1><p>现在HC05 和 HC06 应该已经配对成功并且相互连接<br>你会看到HC05的LED每2秒钟很快的闪 2下，HC06的LED一直亮，不闪烁，这表明连接已经建立，以后每次上电之后，HC05和HC06都会自动连接<br>这样你就可以愉快地用一个做遥控，一个做接收啦，做点遥控车啥的</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/11/21/connectbt/">双蓝牙模块的配对连接设置教程</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">好奇吖斌</a></p>
+        <p><span>发布时间:</span>2019-11-21, 00:55:44</p>
+        <p><span>最后更新:</span>2020-02-04, 02:41:53</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/21/connectbt/" title="双蓝牙模块的配对连接设置教程">http://www.haoqiabin.cn/2019/11/21/connectbt/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.haoqiabin.cn/2019/11/21/connectbt/　　作者: 好奇吖斌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2020/02/21/zhangla/">
+                    小制作分享-魔法悬浮装着？张拉结构
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/09/19/CombatRobot/">
+                    迷你格斗机器人--铁角龙建造日志
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#步骤一：HC06蓝牙模块设置"><span class="toc-number">1.</span> <span class="toc-text">步骤一：HC06蓝牙模块设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HC06波特率更改"><span class="toc-number">1.0.1.</span> <span class="toc-text">HC06波特率更改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HC06的密码更改"><span class="toc-number">1.0.2.</span> <span class="toc-text">HC06的密码更改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HC06改蓝牙名称"><span class="toc-number">1.0.3.</span> <span class="toc-text">HC06改蓝牙名称</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#步骤二：HC05蓝牙模块的设置"><span class="toc-number">2.</span> <span class="toc-text">步骤二：HC05蓝牙模块的设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a-更改HC05蓝牙模块密码"><span class="toc-number">2.0.1.</span> <span class="toc-text">a.更改HC05蓝牙模块密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b-更改HC05蓝牙模块波特率"><span class="toc-number">2.0.2.</span> <span class="toc-text">b.更改HC05蓝牙模块波特率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#c-更改HC05蓝牙模块名称"><span class="toc-number">2.0.3.</span> <span class="toc-text">c.更改HC05蓝牙模块名称</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#步骤三：配对与连接"><span class="toc-number">3.</span> <span class="toc-text">步骤三：配对与连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#步骤四：验证"><span class="toc-number">4.</span> <span class="toc-text">步骤四：验证</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"双蓝牙模块的配对连接设置教程　| 探索的好奇心　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2020/02/21/zhangla/" title="上一篇: 小制作分享-魔法悬浮装着？张拉结构">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/09/19/CombatRobot/" title="下一篇: 迷你格斗机器人--铁角龙建造日志">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/02/21/zhangla/">小制作分享-魔法悬浮装着？张拉结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/connectbt/">双蓝牙模块的配对连接设置教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/19/CombatRobot/">迷你格斗机器人--铁角龙建造日志</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/20/musicbox/">卖萌ớ ₃ờ蓝牙音箱表情包</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/04/BTPS4/">教程向--PS4手柄🎮做Arduino的控制器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/projector/">3D打印球型投影小夜灯💡</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/MecanumWheelCar/">草稿版麦克纳姆轮小车</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/07/raspberry-oled/">解决树莓派驱动OLED(非SSD1306)花屏问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/04/gizwits_learn/">机智云学习笔记✏️</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/23/MakerFaireXiAn2017/">西安制汇节2017(未完成更新完，最近忙)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/RoboardPro/">Arduino UNO增强版Roboard Pro测试与使用说明</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/16/pet-toy/">宠物互动--逗宠萌物🐱(程序与轮子有更新)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/27/usefulcode/">Arduino一些有用的代码</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/25/led-robot/">点阵LED卖萌表情包(*_*)+假唱机器人</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/27/drone/">组装穿越机</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/25/MakerFaireShenZhen2016/">深圳制汇节2016</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/10/teacherday/">红棉创客8小时造物工坊与广州图书馆首届创客大赛启动</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/30/sublime-stino/">替代Arduino IDE的Sublime Text的插件---Stino</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/29/MakerEDU/">广州创客教育展</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/18/testing/">测试页面-高中珍藏照片</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/15/hello-world/">Hello World!</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2020 好奇吖斌
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
